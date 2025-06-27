@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rev. Dr. Anthony O. Ezekwu | Catholic Priest & Scholar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Rev. Dr. Anthony O. Ezekwu</div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#ministries">Ministries</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" required data-aos="fade-down" data-aos-deley="1000" data-aos-duration="2000">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Rev. Dr. Anthony O. Ezekwu</h1>
+                <p class="subtitle">Catholic Priest • Scholar • Mentor</p>
+                <blockquote>"Welcome to Rev. Dr. Anthony O. Ezekwu's Website"</blockquote>
+                <p>A Catholic priest of Enugu Diocese, Nigeria</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary icon">Learn More</a>
+                    <a href="#contact" class="btn btn-outline icon">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-image" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <img src="./images/IMG-20250618-WA0240.jpg" alt="Rev. Dr. Anthony O. Ezekwu" >
+                </div>
+                <div class="about-text">
+                    <p>He is a scholar, writer, teacher, mentor, counselor, and advocate of justice.
+
+                        He has strong professional skills in human management, research, leadership, public speaking,
+                        mentorship, counseling, writing, peace advocate, Philosophy.</p>
+
+                    <div class="tab-titles">
+                        <div class="tab-links active-link" onclick="opentab('education')">Education</div>
+                        <div class="tab-links" onclick="opentab('experience')">Experience</div>
+                        <div class="tab-links" onclick="opentab('skills')">Skills</div>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li>PhD in Social Ethics - Johannes Gutenberg University, Germany</li>
+                            <li>Master's in Social Ethics - Johannes Gutenberg University</li>
+                            <li>Philosophy & Theology - Bigard Memorial Seminary, Enugu</li>
+                            <li>HND in Mass Communication - Institute of Journalism, Enugu</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li>Director of Social Justice Initiatives - Enugu Diocese</li>
+                            <li>Lecturer & Spiritual Director - St. Bernard's Seminary</li>
+                            <li>Episcopal Vicar for Youths - Diocese of Awgu</li>
+                            <li>Deputy Director - Catholic Institute for Development Justice & Peace</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li>Pastoral Counseling & Spiritual Direction</li>
+                            <li>Academic Research & Theological Writing</li>
+                            <li>Public Speaking & Homiletics</li>
+                            <li>Community Development & Social Justice Advocacy</li>
+                            <li>Multilingual: English, German, Igbo, Latin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-grid">
+                <div class="publication-card" required data-aos="fade-right" data-aos-deley="1000" data-aos-duration="2000">
+                    <h3>Books Published</h3>
+                    <p>Explore the collection of published books covering various aspects of theology, philosophy,
+                        and social justice.</p>
+                    <a href="#" class="btn">View Books</a>
+                </div>
+                <div class="publication-card" required data-aos="fade-left" data-aos-deley="1000" data-aos-duration="2000">
+                    <h3>Papers & Articles</h3>
+                    <p>Academic papers and articles on research, philosophy, and theological studies.</p>
+                    <a href="#" class="btn">View Papers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section id="ministries" class="section bg-light" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+        <div class="container">
+            <h2 class="section-title">Ministries & Programs</h2>
+            <div class="ministries-grid" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                <div class="ministry-card">
+                    <i class="fas fa-hands-helping icon"></i>
+                    <h3>Community Outreach</h3>
+                    <p>Weekly food distribution programs and shelter support for the underprivileged in Enugu Diocese.
+                    </p>
+                </div>
+
+                <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <i class="fas fa-bible icon"></i>
+                    <h3>Bible Study Fellowship</h3>
+                    <p>Weekly scripture study groups for all ages, fostering spiritual growth and biblical literacy.</p>
+                </div>
+
+                <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <i class="fas fa-user-graduate icon"></i>
+                    <h3>Youth Empowerment</h3>
+                    <p>Vocational training, scholarship programs, and leadership development for young adults.</p>
+                </div>
+
+                <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <i class="fas fa-heartbeat icon"></i>
+                    <h3>Health & Wellness</h3>
+                    <p>Free medical camps, counseling services, and health education programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <img src="./images/IMG-20250618-WA0241.jpg" alt="Community Mass">
+                    <!-- <div class="gallery-caption">Celebrating Community Mass</div> -->
+                </div>
+                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <img src="./images/IMG-20250618-WA0242.jpg" alt="Youth Program">
+                    <!-- <div class="gallery-caption">Youth Leadership Program</div> -->
+                </div>
+                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <img src="./images/IMG-20250618-WA0243.jpg" alt="Charity Event">
+                    <!-- <div class="gallery-caption">Charity Food Distribution</div> -->
+                </div>
+                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <img src="./images/IMG-20250618-WA0244.jpg" alt="Academic Lecture">
+                    <!-- <div class="gallery-caption">Theological Lecture</div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Testimonials Section -->
+     <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Words of Wisdom</h2>
+                <p>Insights from recent sermons and teachings</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"Faith is not about having all the answers, but about trusting
+                                God even when we don't understand His plan."</p>
+                            <div class="testimonial-meta">— Sunday Service, December 2024</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"In our darkest moments, God's light shines brightest. We must
+                                learn to be vessels of that light for others."</p>
+                            <div class="testimonial-meta">— Evening Prayer Meeting</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"True ministry happens not just from the pulpit, but in the
+                                quiet moments of listening and caring for one another."</p>
+                            <div class="testimonial-meta">— Pastoral Care Workshop</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>anthonyezekwu@email.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Enugu Diocese, Nigeria</p>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Follow Me</h3>
+                        <div class="social-icons">
+                            <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="https://formsubmit.co/ezedaniel1223@gmail.com" method="POST" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Rev. Dr. Anthony O. Ezekwu - Catholic Priest & Scholar</p>
+            <p class="copyright">&copy; 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
