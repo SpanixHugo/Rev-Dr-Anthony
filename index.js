@@ -146,3 +146,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function toggleText(id, button) {
+    const expandable = document.getElementById(id);
+    const isExpanded = expandable.classList.contains('expanded');
+    
+    if (isExpanded) {
+        expandable.classList.remove('expanded');
+        expandable.classList.add('collapsed');
+        button.innerHTML = '<i class="fas fa-chevron-down"></i> See More';
+    } else {
+        expandable.classList.remove('collapsed');
+        expandable.classList.add('expanded');
+        button.innerHTML = '<i class="fas fa-chevron-up"></i> See Less';
+    }
+}
+
+function openTab(tabName) {
+    // Hide all tab contents
+    const tabContents = document.getElementsByClassName('tab-contents');
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove('active-tab');
+    }
+    
+    // Remove active class from all tab links
+    const tabLinks = document.getElementsByClassName('tab-links');
+    for (let i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active-link');
+    }
+    
+    // Show the selected tab and set the tab link as active
+    document.getElementById(tabName).classList.add('active-tab');
+    
+    // Find and activate the clicked tab link
+    event.currentTarget.classList.add('active-link');
+}
