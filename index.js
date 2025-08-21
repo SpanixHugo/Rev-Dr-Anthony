@@ -96,3 +96,53 @@ setInterval(() => {
     currentSlide = (currentSlide + 1) % dots.length;
     updateSlider();
 }, 5000);
+
+document.querySelectorAll('.book-card').forEach(card => {
+    card.addEventListener('click', function () {
+      console.log('Book clicked:', this.querySelector('h3').textContent);
+    });
+});
+  
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal element
+    const modal = document.getElementById('worksModal');
+    
+    // Get open modal button
+    const openModalBtn = document.getElementById('openModal');
+    
+    // Get close button
+    const closeBtn = document.getElementsByClassName('close')[0];
+    
+    // Function to open modal
+    function openModal() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    // Function to close modal
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Enable scrolling
+    }
+    
+    // Listen for open click
+    openModalBtn.addEventListener('click', openModal);
+    
+    // Listen for close click
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Listen for outside click
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+});
