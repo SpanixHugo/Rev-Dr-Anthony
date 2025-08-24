@@ -285,7 +285,7 @@ header {
     display: flex;
     margin: 25px 0 20px;
     border-bottom: 1px solid #ddd;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .tab-links {
