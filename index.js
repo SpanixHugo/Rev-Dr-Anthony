@@ -235,3 +235,80 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target == modal) modal.style.display = "none";
   };
 });
+
+// const modal = document.getElementById("applicationModal");
+// const openBtn = document.getElementById("openApplicationForm");
+// const closeBtn = document.querySelector(".close-modal");
+
+// openBtn.addEventListener("click", () => {
+//     modal.style.display = "flex";
+// });
+
+// closeBtn.addEventListener("click", () => {
+//     modal.style.display = "none";
+// });
+
+// window.addEventListener("click", (e) => {
+//     if (e.target === modal) {
+//         modal.style.display = "none";
+//     }
+// });
+
+// document.getElementById("applicationForm").addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert("Application submitted successfully!");
+//     modal.style.display = "none";
+//     this.reset();
+// });
+
+ // Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+const modal = document.getElementById('applicationModal');
+const openBtn = document.getElementById('openApplicationForm');
+const closeBtn = document.querySelector('.close-modal');
+const form = document.getElementById('applicationForm');
+
+// Open modal
+openBtn.addEventListener('click', function() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+});
+
+// Close modal
+closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Enable scrolling
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Form submission
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Simple form validation
+    const fullname = document.getElementById('fullname').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const program = document.getElementById('program').value;
+    
+    if (!fullname || !email || !phone || !program) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // In a real application, you would send this data to a server
+    alert(`Thank you, ${fullname}! Your application for ${program} has been received. We will contact you soon.`);
+    
+    // Reset form and close modal
+    form.reset();
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+});

@@ -10,7 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
     <section id="home" class="hero" required data-aos="fade-down" data-aos-deley="1000" data-aos-duration="2000">
         <div class="container">
             <div class="hero-content">
-                <h1>Rev. Dr. Anthony Okechukwu Ezekwu</h1>
+                <h1>Rev. Fr. Dr. Anthony Okechukwu Ezekwu</h1>
                 <p class="subtitle">Scholar • mentor • teacher • coach • counselor.
                 </p>
                 <blockquote>Welcome to the website of Rev. Fr. Dr. Anthony .O. Ezekwu</blockquote>
@@ -206,20 +206,44 @@
                 theology to social ethics and practical reflections on life.
             </p>
 
-            <div class="featured-works">
-                <h3>Featured Books</h3>
-                <ul>
-                    <li><em>Stories From the Dream Land</em> (2006)</li>
-                    <li><em>Crisis of Morality Among Youths</em> (2007)</li>
-                    <li><em>Religion, Politics and Ethnic Games in Nigeria</em> (2023)</li>
-                    <li><em>The Hidden World of Autism</em> (2025)</li>
-                </ul>
+            <div class="publications-grid">
+
+                <div class="publication-card">
+                    <h3>Books Published</h3>
+                    <p>Explore the collection of published books covering various aspects of theology, philosophy,
+                        and social justice.</p>
+                    <a href="./books.html" class="btn btn-primary">View Books</a>
+                </div>
+                <div class="publication-card">
+                    <h3>Papers & Articles</h3>
+                    <p>Academic papers and articles on research, philosophy, and theological studies.</p>
+                    <a href="./articles.html" class="btn btn-primary">View Papers</a>
+                </div>
+
+                <!-- <div class="featured-works">
+                    <h3>Featured Books</h3>
+                    <ul>
+                        <li><em>Stories From the Dream Land</em> (2006)</li>
+                        <li><em>Crisis of Morality Among Youths</em> (2007)</li>
+                        <li><em>Religion, Politics and Ethnic Games in Nigeria</em> (2023)</li>
+                        <li><em>The Hidden World of Autism</em> (2025)</li>
+                    </ul>
+                </div>
+                <div class="featured-works">
+                    <h3>Featured Books</h3>
+                    <ul>
+                        <li><em>Stories From the Dream Land</em> (2006)</li>
+                        <li><em>Crisis of Morality Among Youths</em> (2007)</li>
+                        <li><em>Religion, Politics and Ethnic Games in Nigeria</em> (2023)</li>
+                        <li><em>The Hidden World of Autism</em> (2025)</li>
+                    </ul>
+                </div> -->
             </div>
 
             <!-- Button to open modal -->
-            <div class="download-btn">
+            <!-- <div class="download-btn">
                 <button id="openModal" class="btn">📚 View All Works</button>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -250,41 +274,87 @@
 
 
     <!-- Ministries Section -->
-    <section id="ministries" class="section bg-light" required data-aos="fade-up" data-aos-deley="1000"
-        data-aos-duration="2000">
+    <section id="ministries" class="section bg-light" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">
         <div class="container">
             <h2 class="section-title">Ministries & Programs</h2>
-            <div class="ministries-grid" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+            <div class="ministries-grid" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">
                 <div class="ministry-card">
                     <i class="fas fa-hands-helping icon"></i>
                     <h3>Community Outreach</h3>
                     <p>Food distribution programs, shelter support for the less privileged, and business grants for
-                        widows and rural women.
-                    </p>
+                        widows
+                        and rural women.</p>
                 </div>
 
-                <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                <div class="ministry-card">
                     <i class="fas fa-bible icon"></i>
                     <h3>Christian Fellowship</h3>
                     <p>Daily Eucharistic celebration for all, fostering spiritual growth, spiritual counseling and Bible
                         teaching.</p>
                 </div>
 
-                <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                <div class="ministry-card">
                     <i class="fas fa-user-graduate icon"></i>
                     <h3>Youth Empowerment</h3>
-                    <p>Scholarship programs, youth mentorship, training and leadership development for you g adults.</p>
+                    <p>Scholarship programs, youth mentorship, training and leadership development for young adults.</p>
                 </div>
 
-                <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+                <div class="ministry-card">
                     <i class="fas fa-heartbeat icon"></i>
                     <h3>Health & Wellness/Coaching</h3>
                     <p>Counseling services, health and physical education programs, life, career, business, spiritual
-                        and relationship coaching.</p>
+                        and
+                        relationship coaching.</p>
                 </div>
+            </div>
+
+            <div class="application-container see-more-container">
+                <button id="openApplicationForm" class="btn">Join Program</button>
             </div>
         </div>
     </section>
+
+    <!-- ===== Modal Form ===== -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title">Program Application Form</h3>
+            <form id="applicationForm">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Select Program</label>
+                    <select id="program" name="program" required>
+                        <option value="">-- Choose a program --</option>
+                        <option value="Community Outreach">Community Outreach</option>
+                        <option value="Christian Fellowship">Christian Fellowship</option>
+                        <option value="Youth Empowerment">Youth Empowerment</option>
+                        <option value="Health & Wellness">Health & Wellness/Coaching</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Write a short note..."></textarea>
+                </div>
+
+                <button type="submit" class="btn submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </div>
 
 
     <!-- Gallery Section -->
