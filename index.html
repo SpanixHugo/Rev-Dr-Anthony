@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rev. Dr. Anthony O. Ezekwu | Catholic Priest & Scholar</title>
+    <title>Rev. Dr. Anthony O. Ezekwu | Priest & Scholar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
@@ -36,10 +36,11 @@
     <section id="home" class="hero" required data-aos="fade-down" data-aos-deley="1000" data-aos-duration="2000">
         <div class="container">
             <div class="hero-content">
-                <h1>Rev. Dr. Anthony O. Ezekwu</h1>
-                <p class="subtitle">Counselor • Scholar • Mentor</p>
-                <blockquote>"Welcome to the website of Rev. Dr. Anthony .O. Ezekwu"</blockquote>
-                <p>A Catholic priest of Enugu Diocese, Nigeria</p>
+                <h1>Rev. Dr. Anthony Okechukwu Ezekwu</h1>
+                <p class="subtitle">Scholar • mentor • teacher • coach • counselor.
+                </p>
+                <blockquote>Welcome to the website of Rev. Fr. Dr. Anthony .O. Ezekwu</blockquote>
+                <!-- <p>A Catholic priest of Enugu Diocese, Nigeria</p> -->
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary icon">Learn More</a>
                     <a href="#contact" class="btn btn-outline icon">Contact Me</a>
@@ -176,6 +177,12 @@
                                 <li>Academic Researcher & tutor.</li>
                                 <li>Pastoral Researcher.</li>
                                 <li>Pastoral Counseling.</li>
+                                <li>Personal & professional coaching.</li>
+                                <li>Transformation coaching.</li>
+                                <li>Mentorship coaching.</li>
+                                <li>Business coaching.</li>
+                                <li>Guidance Coaching.</li>
+
                             </ul>
                         </div>
                         <button class="toggle-button" onclick="toggleText('expandableSkills', this)">
@@ -251,55 +258,65 @@
                 <div class="ministry-card">
                     <i class="fas fa-hands-helping icon"></i>
                     <h3>Community Outreach</h3>
-                    <p>Weekly food distribution programs and shelter support for the underprivileged in Enugu Diocese.
+                    <p>Food distribution programs, shelter support for the less privileged, and business grants for
+                        widows and rural women.
                     </p>
                 </div>
 
                 <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
                     <i class="fas fa-bible icon"></i>
-                    <h3>Bible Study Fellowship</h3>
-                    <p>Weekly scripture study groups for all ages, fostering spiritual growth and biblical literacy.</p>
+                    <h3>Christian Fellowship</h3>
+                    <p>Daily Eucharistic celebration for all, fostering spiritual growth, spiritual counseling and Bible
+                        teaching.</p>
                 </div>
 
                 <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
                     <i class="fas fa-user-graduate icon"></i>
                     <h3>Youth Empowerment</h3>
-                    <p>Vocational training, scholarship programs, and leadership development for young adults.</p>
+                    <p>Scholarship programs, youth mentorship, training and leadership development for you g adults.</p>
                 </div>
 
                 <div class="ministry-card" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
                     <i class="fas fa-heartbeat icon"></i>
-                    <h3>Health & Wellness</h3>
-                    <p>Free medical camps, counseling services, and health education programs.</p>
+                    <h3>Health & Wellness/Coaching</h3>
+                    <p>Counseling services, health and physical education programs, life, career, business, spiritual
+                        and relationship coaching.</p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Gallery Section -->
-    <section id="gallery" class="section" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
+    <section id="gallery" class="section" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">
         <div class="container">
             <h2 class="section-title">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
-                    <img src="./images/IMG-20250618-WA0241.jpg" alt="Community Mass">
-                    <!-- <div class="gallery-caption">Celebrating Community Mass</div> -->
-                </div>
-                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
-                    <img src="./images/IMG-20250618-WA0242.jpg" alt="Youth Program">
-                    <!-- <div class="gallery-caption">Youth Leadership Program</div> -->
-                </div>
-                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
-                    <img src="./images/IMG-20250618-WA0243.jpg" alt="Charity Event">
-                    <!-- <div class="gallery-caption">Charity Food Distribution</div> -->
-                </div>
-                <div class="gallery-item" required data-aos="fade-up" data-aos-deley="1000" data-aos-duration="2000">
-                    <img src="./images/IMG-20250618-WA0244.jpg" alt="Academic Lecture">
-                    <!-- <div class="gallery-caption">Theological Lecture</div> -->
-                </div>
+            <div id="gallery-grid" class="gallery-grid"></div>
+
+            <!-- Button to open modal -->
+            <div class="see-more-container">
+                <button id="openGalleryModal" class="btn">See Full Gallery</button>
             </div>
         </div>
     </section>
+
+    <!-- Modal for full gallery -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Full Gallery</h2>
+            <div id="gallery-modal-grid" class="gallery-grid"></div>
+        </div>
+    </div>
+
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Preview">
+    </div>
+
+
 
     <!-- Testimonials Section -->
     <section class="testimonials">

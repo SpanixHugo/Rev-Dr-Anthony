@@ -181,3 +181,57 @@ function openTab(tabName) {
     // Find and activate the clicked tab link
     event.currentTarget.classList.add('active-link');
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("images.json")
+    .then(res => res.json())
+    .then(data => {
+      const images = data.images;
+      const mainGallery = document.getElementById("gallery-grid");
+      const modalGallery = document.getElementById("gallery-modal-grid");
+
+      // First 8 images → main gallery
+      images.slice(0, 8).forEach(src => {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.innerHTML = `<img src="${src}" alt="Gallery Image">`;
+        mainGallery.appendChild(div);
+      });
+
+      // Remaining images → modal gallery
+      images.slice(8).forEach(src => {
+        const div = document.createElement("div");
+        div.className = "gallery-item";
+        div.innerHTML = `<img src="${src}" alt="Gallery Image">`;
+        modalGallery.appendChild(div);
+      });
+
+      // Enable click-to-enlarge inside modal
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxClose = document.querySelector(".lightbox-close");
+
+      modalGallery.addEventListener("click", e => {
+        if (e.target.tagName === "IMG") {
+          lightbox.style.display = "flex";
+          lightboxImg.src = e.target.src;
+        }
+      });
+
+      lightboxClose.onclick = () => (lightbox.style.display = "none");
+      lightbox.onclick = e => {
+        if (e.target === lightbox) lightbox.style.display = "none";
+      };
+    });
+
+  // Modal handling
+  const modal = document.getElementById("galleryModal");
+  const btn = document.getElementById("openGalleryModal");
+  const span = document.querySelector(".close");
+
+  btn.onclick = () => (modal.style.display = "block");
+  span.onclick = () => (modal.style.display = "none");
+  window.onclick = e => {
+    if (e.target == modal) modal.style.display = "none";
+  };
+});
