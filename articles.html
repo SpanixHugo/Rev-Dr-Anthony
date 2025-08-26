@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/articles.css">
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -14,6 +16,7 @@
                 <i class="fas fa-book"></i>
                 <span>Fr Anthony's Publications</span>
             </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <nav>
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -24,129 +27,31 @@
             </nav>
         </div>
     </header>
-    
+
     <div class="container">
         <a href="index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Home
         </a>
-        
+
         <div class="page-header">
             <h1>Articles by Rev Fr Anthony Ezekwu</h1>
-            <p>Browse through the collection of articles and papers written by Rev Fr Anthony Ezekwu, covering various theological topics, spiritual reflections, and contemporary issues in Christianity.</p>
+            <p>Browse through the collection of articles and papers written by Rev Fr Anthony Ezekwu, covering various
+                theological topics, spiritual reflections, and contemporary issues in Christianity.</p>
         </div>
-        
-        <div class="publications-grid">
-            <div class="publication-card">
-                <!-- <div class="publication-image">
-                    <img src="https://placehold.co/400x300/3498db/ffffff?text=Theology+Today" alt="Theology Today Article Cover">
-                </div> -->
-                <div class="publication-details">
-                    <h3 class="publication-title">Theology in Modern Times</h3>
-                    <div class="publication-meta">
-                        <span>Published: June 12, 2021</span>
-                        <span>12 min read</span>
-                    </div>
-                    <p class="publication-description">An examination of how theological study has evolved in the 21st century and its relevance to contemporary believers.</p>
-                    <a href="#" class="publication-link">
-                        <i class="fas fa-eye"></i> Read Article
-                    </a>
-                </div>
-            </div>
-            
-            <div class="publication-card">
-                <div class="publication-image">
-                    <img src="https://placehold.co/400x300/e74c3c/ffffff?text=Community+Building" alt="Community Building Article Cover">
-                </div>
-                <div class="publication-details">
-                    <h3 class="publication-title">Building Faith Communities</h3>
-                    <div class="publication-meta">
-                        <span>Published: September 3, 2022</span>
-                        <span>10 min read</span>
-                    </div>
-                    <p class="publication-description">Strategies for creating vibrant, welcoming faith communities in diverse societies. Practical insights for church leaders.</p>
-                    <a href="#" class="publication-link">
-                        <i class="fas fa-eye"></i> Read Article
-                    </a>
-                </div>
-            </div>
-            
-            <div class="publication-card">
-                <div class="publication-image">
-                    <img src="https://placehold.co/400x300/2ecc71/ffffff?text=Spiritual+Growth" alt="Spiritual Growth Article Cover">
-                </div>
-                <div class="publication-details">
-                    <h3 class="publication-title">Pathways to Spiritual Growth</h3>
-                    <div class="publication-meta">
-                        <span>Published: February 18, 2021</span>
-                        <span>15 min read</span>
-                    </div>
-                    <p class="publication-description">Practical approaches to deepening one's spiritual practice in everyday life. Guidance for both new and mature believers.</p>
-                    <a href="#" class="publication-link">
-                        <i class="fas fa-eye"></i> Read Article
-                    </a>
-                </div>
-            </div>
-            
-            <div class="publication-card">
-                <div class="publication-image">
-                    <img src="https://placehold.co/400x300/9b59b6/ffffff?text=Scripture+Study" alt="Scripture Study Article Cover">
-                </div>
-                <div class="publication-details">
-                    <h3 class="publication-title">Modern Approaches to Scripture</h3>
-                    <div class="publication-meta">
-                        <span>Published: April 5, 2020</span>
-                        <span>18 min read</span>
-                    </div>
-                    <p class="publication-description">Exploring contemporary methods of biblical interpretation and how they can enrich our understanding of sacred texts.</p>
-                    <a href="#" class="publication-link">
-                        <i class="fas fa-eye"></i> Read Article
-                    </a>
-                </div>
-            </div>
-            
-            <div class="publication-card">
-                <div class="publication-image">
-                    <img src="https://placehold.co/400x300/f39c12/ffffff?text=Christian+Living" alt="Christian Living Article Cover">
-                </div>
-                <div class="publication-details">
-                    <h3 class="publication-title">Christian Ethics in a Secular World</h3>
-                    <div class="publication-meta">
-                        <span>Published: November 15, 2022</span>
-                        <span>14 min read</span>
-                    </div>
-                    <p class="publication-description">Navigating moral challenges as a Christian in increasingly secular societies. Balancing faith and contemporary values.</p>
-                    <a href="#" class="publication-link">
-                        <i class="fas fa-eye"></i> Read Article
-                    </a>
-                </div>
-            </div>
-            
-            <div class="publication-card">
-                <div class="publication-image">
-                    <img src="https://placehold.co/400x300/34495e/ffffff?text=Prayer+Life" alt="Prayer Life Article Cover">
-                </div>
-                <div class="publication-details">
-                    <h3 class="publication-title">Deepening Your Prayer Life</h3>
-                    <div class="publication-meta">
-                        <span>Published: January 8, 2023</span>
-                        <span>11 min read</span>
-                    </div>
-                    <p class="publication-description">Practical guidance for developing a richer, more meaningful prayer practice amidst the busyness of modern life.</p>
-                    <a href="#" class="publication-link">
-                        <i class="fas fa-eye"></i> Read Article
-                    </a>
-                </div>
-            </div>
+
+        <div class="publications-grid" id="publications-grid">
+           
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>About</h3>
-                <p>Rev Fr Anthony Ezekwu is a Catholic priest and author dedicated to sharing spiritual wisdom through his writings and sermons.</p>
+                <p>Rev Fr Anthony Ezekwu is a Catholic priest and author dedicated to sharing spiritual wisdom through
+                    his writings and sermons.</p>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
@@ -156,21 +61,23 @@
                     <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Connect</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    <li><a href="https://x.com/AnthonyEzekwu"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com/chilavetok/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@toniezekwu"><i class="fab fa-youtube"></i> YouTube</a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2023 Rev Fr Anthony Ezekwu. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="./JS/article.js"></script>
 </body>
+
 </html>

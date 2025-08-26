@@ -110,6 +110,17 @@ img {
     color: var(--white);
 }
 
+.btn-counseling {
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    color: white;
+}
+
+.btn-counseling:hover {
+    background: linear-gradient(to right, #27ae60, #219653);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
 /* ===== Header ===== */
 header {
     background-color: var(--white);
@@ -1356,4 +1367,27 @@ blockquote {
     font-size: 40px;
     color: white;
     cursor: pointer;
+}
+
+ /* Counseling Button Container */
+.counseling-container {
+    text-align: center;
+    margin: 10px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 12px;
+    border-left: 5px solid #2ecc71;
+}
+
+.counseling-container h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+.counseling-container > .btn {
+    /* background: linear-gradient(to right, #2ecc71, #27ae60); */
+    /* color: white; */
+    /* font-size: 1.1rem; */
+    margin: 20px 0;
+    /* box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); */
 }
