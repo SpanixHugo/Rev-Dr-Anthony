@@ -1,24 +1,28 @@
-// Mobile nav toggle
+// Toggle menu functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-        });
-    }
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (nav && nav.classList.contains('active') && 
-            !event.target.closest('nav') && 
-            !event.target.closest('.menu-toggle')) {
-            nav.classList.remove('active');
-        }
+      const isClickInsideNav = nav.contains(event.target);
+      const isClickOnToggle = menuToggle.contains(event.target);
+      
+      if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
     });
+  }
 });
+
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch("images.json")
     .then(res => res.json())

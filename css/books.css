@@ -1,4 +1,5 @@
 /* books.css */
+/* books.css - Updated Header and Toggle Styles */
 /* ===== CSS Variables ===== */
 :root {
     --primary: #2c3e50;
@@ -40,6 +41,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: relative;
 }
 
 /* logo */
@@ -49,6 +51,7 @@ header {
   font-size: 1.2rem;
   font-weight: 600;
   color: #333;
+  flex: 1;
 }
 
 .logo i {
@@ -61,6 +64,11 @@ header {
   font-size: 1.5rem;
   cursor: pointer;
   display: none; /* hidden on desktop */
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.active i::before {
+  content: "\f00d"; /* FontAwesome close icon */
 }
 
 /* navigation */
@@ -88,6 +96,16 @@ nav ul li a.active {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block; /* show on mobile */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+
+  .logo {
+    justify-content: flex-start;
+    padding-right: 2.5rem; /* Space for the toggle */
   }
 
   nav {
