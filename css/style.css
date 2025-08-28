@@ -542,76 +542,6 @@ header {
     color: #555;
 }
 
-/* .featured-works {
-    margin: 40px auto;
-    padding: 40px;
-    max-width: 750px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid #3498db;
-}
-
-.featured-works:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-.featured-title {
-    font-size: 1.7rem;
-    margin-bottom: 25px;
-    font-weight: 600;
-    color: #2c3e50;
-    display: flex;
-    align-items: center;
-}
-
-.featured-title i {
-    margin-right: 12px;
-    color: #3498db;
-}
-
-.featured-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.featured-list li {
-    font-size: 1.1rem;
-    margin: 18px 0;
-    color: #333;
-    padding-left: 35px;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.featured-list li:hover {
-    color: #2980b9;
-}
-
-.featured-list li::before {
-    content: "📖";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.3rem;
-}
-
-.featured-list span {
-    color: #7f8c8d;
-    font-size: 0.95rem;
-    margin-left: 12px;
-    font-weight: 500;
-}
-
-.download-btn {
-    margin-top: 40px;
-} */
-
 .publications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1169,7 +1099,7 @@ footer {
 
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 45px;
         left: -100%;
         width: 100%;
         background: var(--white);
@@ -1303,7 +1233,7 @@ footer {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
 }
 
@@ -1390,4 +1320,15 @@ blockquote {
     /* font-size: 1.1rem; */
     margin: 20px 0;
     /* box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); */
+}
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    color: #fff;
+    font-weight: 700;
 }
