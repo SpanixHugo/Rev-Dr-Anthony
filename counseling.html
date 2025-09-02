@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Counseling Session | Rev. Dr. Anthony Ezekwu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/counseling.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav" role="navigation" aria-label="Main">
+            <div class="brand">
+                <!-- <div class="logo-mark">AE</div> -->
+                <div class="site-title">Rev. Dr. Anthony Ezekwu</div>
+            </div>
+
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#coaching">Coaching</a>
+                <a href="#offers">Offers</a>
+                <a href="#booking">Book</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <button class="hambtn" id="hambtn" aria-label="Open menu" aria-expanded="false" aria-controls="panelWrap">
+                <span class="bar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- mobile off-canvas -->
+    <div id="panelWrap" class="panel-wrap" aria-hidden="true" >
+        <div class="backdrop" tabindex="-1"></div>
+        <aside class="panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
+            <button class="close" id="panelClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+
+            <div style="display:flex;gap:12px;align-items:center;">
+                <!-- <div class="logo-mark" style="width:48px;height:48px">AE</div> -->
+                <div>
+                    <div style="font-weight:800;color:var(--accent-2)">Rev. Dr. Anthony Ezekwu</div>
+                    <div style="color:var(--muted);font-size:0.92rem">Coaching & Counseling</div>
+                </div>
+            </div>
+
+            <nav>
+                <a href="#coaching">Coaching</a>
+                <a href="#offers">Offers</a>
+                <a href="#booking">Book a Session</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="cta">
+                <a class="btn primary" href="#booking">Book a Session</a>
+            </div>
+        </aside>
+    </div>
+
+    <main class="wrap">
+        <a class="back-link" href="index.html" aria-label="Back to home"><i class="fas fa-arrow-left"></i> Back to
+            Home</a>
+
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="heroTitle" data-aos="fade-down" data-aos-deley="1000"
+        data-aos-duration="2000">
+            <article class="hero-card" id="heroCard">
+                <div>
+                    <div class="eyebrow">Transformational Coaching</div>
+                    <h2 id="heroTitle" class="hero-title">Our coaching services are designed to help you unlock your
+                        potential</h2>
+                    <p class="hero-lead">Gain clarity, build confidence, and take confident steps toward your goals with
+                        faith-integrated coaching.</p>
+                </div>
+
+                <div class="hero-ctas">
+                    <a class="btn primary" href="#booking"><i class="fas fa-calendar-plus"></i> Book a Coaching
+                        Session</a>
+                    <a class="btn outline" href="#booking">Schedule a Free Consultation</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- MAIN: coaching + booking -->
+        <div class="layout" data-aos="fade-down" data-aos-deley="1000"
+        data-aos-duration="2000">
+
+            <!-- left: subcategories & benefits -->
+            <section id="coaching" aria-labelledby="coachingHead">
+                <h3 id="coachingHead" style="color:var(--accent-2);margin-bottom:8px">
+                    Subcategories</h3>
+                <p style="color:var(--muted);margin-bottom:14px">Choose the coaching area that fits your current need.
+                </p>
+
+                <div class="coaching-grid" id="offers">
+                    <article class="coaching-card" aria-labelledby="lifeTitle">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <h3 id="lifeTitle">Life Coaching</h3>
+                        <p>Personal growth, clarity, and confidence — practical habits that stick.</p>
+                    </article>
+
+                    <article class="coaching-card" aria-labelledby="careerTitle">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 id="careerTitle">Career Coaching</h3>
+                        <p>Job guidance, leadership development, and workplace success.</p>
+                    </article>
+
+                    <article class="coaching-card" aria-labelledby="businessTitle">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 id="businessTitle">Business Coaching</h3>
+                        <p>Entrepreneurship, strategy, and productivity systems.</p>
+                    </article>
+
+                    <article class="coaching-card" aria-labelledby="spiritualTitle">
+                        <div class="icon"><i class="fas fa-cross"></i></div>
+                        <h3 id="spiritualTitle">Spiritual Coaching</h3>
+                        <p>Faith-led discernment, discovering purpose and deeper fulfillment.</p>
+                    </article>
+
+                    <article class="coaching-card" aria-labelledby="relationshipTitle">
+                        <div class="icon"><i class="fas fa-heart"></i></div>
+                        <h3 id="relationshipTitle">Relationship Coaching</h3>
+                        <p>Communication, conflict resolution and stronger connections.</p>
+                    </article>
+
+                    <article class="coaching-card" aria-labelledby="mentorshipTitle">
+                        <div class="icon"><i class="fas fa-hands-helping"></i></div>
+                        <h3 id="mentorshipTitle">Mentorship & Coaching</h3>
+                        <p>Longer-term guidance and accountability for leaders and ministers.</p>
+                    </article>
+                </div>
+
+                <div class="benefits" aria-hidden="false">
+                    <h3>Why Choose Our Coaching?</h3>
+                    <ul>
+                        <li>✅ Build confidence</li>
+                        <li>✅ Find direction and purpose</li>
+                        <li>✅ Overcome challenges</li>
+                        <li>✅ Achieve personal and professional goals</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- right: booking form -->
+            <aside class="booking" id="booking" aria-labelledby="bookingHead">
+                <h2 id="bookingHead">Book a Counseling / Coaching Session</h2>
+                <p class="meta">Free 20–30 minute clarity call available. We'll contact you to confirm a date and
+                    payment options.</p>
+
+                <form id="bookingForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input id="name" name="name" type="text" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+234 801 234 5678"
+                            pattern="^\+?[0-9\s\-]{7,20}$" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="session">Preferred Session Type</label>
+                        <select id="session" name="session" required>
+                            <option value="">-- Select --</option>
+                            <option value="life">Life Coaching</option>
+                            <option value="career">Career Coaching</option>
+                            <option value="business">Business Coaching</option>
+                            <option value="spiritual">Spiritual Counseling</option>
+                            <option value="relationship">Relationship Coaching</option>
+                            <option value="mentorship">Mentorship</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Notes</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Write any details..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="submit-btn" type="submit">Book Session</button>
+                    </div>
+
+                    <div id="status" class="note" role="status" aria-live="polite" style="display:none"></div>
+                    <!-- <div class="note">Payment: bank transfer or card on confirmation.</div> -->
+                </form>
+            </aside>
+
+        </div> <!-- layout -->
+
+    </main>
+
+    <footer id="contact">
+        <p>&copy; <span id="year"></span> Rev. Dr. Anthony Ezekwu. All Rights Reserved.</p>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">Message sent</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+    <script src="./JS/counseling.js"></script>
+</body>
+
+</html>
