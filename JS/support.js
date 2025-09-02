@@ -1,17 +1,17 @@
+/* ===== Minimal State ===== */
+let selectedAmount = null;
+let isRecurring = false;
+let selectedCategory = "ministry";
+let selectedPaymentMethod = "card";
+let donorName = "";
+let donorEmail = "";
+let customAmountOneTime = "";
+let customAmountMonthly = "";
+let isMemorial = false;
+let memorialName = "";
+
 /* ===== Data ===== */
 const donationAmounts = [25, 50, 100, 250, 500, 1000];
-
-const paymentMethods = [
-    { id: "card", name: "Credit/Debit Card", icon: "credit-card", color: "blue-gray" },
-    { id: "paypal", name: "PayPal", icon: "dollar-sign", color: "blue" },
-    { id: "paystack", name: "Paystack", icon: "smartphone", color: "emerald" },
-    { id: "cashapp", name: "Cash App", icon: "smartphone", color: "green" },
-    { id: "bitcoin", name: "Bitcoin", icon: "bitcoin", color: "orange" },
-    { id: "zelle", name: "Zelle", icon: "zap", color: "purple" },
-    { id: "venmo", name: "Venmo", icon: "smartphone", color: "blue" },
-    { id: "bank", name: "Bank Transfer", icon: "banknote", color: "slate" },
-    { id: "check", name: "Check/Money Order", icon: "mail", color: "gray" }
-];
 
 const categories = [
     { id: "ministry", title: "Ministry Operations", icon: "heart", color: "primary" },
@@ -22,51 +22,48 @@ const categories = [
     { id: "emergency", title: "Emergency Fund", icon: "shield", color: "gold" }
 ];
 
-/* ===== State ===== */
-let state = {
-    selectedAmount: null,
-    isRecurring: false,
-    selectedCategory: "ministry",
-    selectedPaymentMethod: "card",
-    donorName: "",
-    donorEmail: "",
-    customAmountOneTime: "",
-    customAmountMonthly: "",
-    isMemorial: false,
-    memorialName: ""
-};
+const paymentMethods = [
+    { id: "card", name: "Credit/Debit Card", icon: "credit-card", color: "primary" },
+    { id: "paypal", name: "PayPal", icon: "dollar-sign", color: "slate" },
+    { id: "paystack", name: "Paystack", icon: "credit-card", color: "emerald" },
+    { id: "cashapp", name: "Cash App", icon: "smartphone", color: "green" },
+    { id: "bitcoin", name: "Bitcoin", icon: "bitcoin", color: "orange" },
+    { id: "zelle", name: "Zelle", icon: "zap", color: "purple" },
+    { id: "venmo", name: "Venmo", icon: "smartphone", color: "primary" },
+    { id: "bank", name: "Bank Transfer", icon: "banknote", color: "slate" },
+    { id: "check", name: "Check/Money Order", icon: "mail", color: "orange" }
+];
 
 /* ===== Helpers ===== */
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-const money = (n) => `$${Number(n).toLocaleString()}`;
+const money = n => `$${Number(n).toLocaleString()}`;
 
-/* ===== UI Renderers ===== */
+/* ===== Render Functions ===== */
 function renderCategories() {
     const host = $("#category-list");
     if (!host) return;
-    
-    host.innerHTML = categories.map(cat => `
-        <div class="item${cat.id === state.selectedCategory ? ' is-active' : ''}" data-id="${cat.id}">
-            <div class="square ${cat.color}">
-                <i data-lucide="${cat.icon}"></i>
-            </div>
+    host.innerHTML = "";
+    categories.forEach(cat => {
+        const item = document.createElement("div");
+        item.className = "item";
+        item.dataset.id = cat.id;
+        if (cat.id === selectedCategory) item.classList.add("is-active");
+        item.innerHTML = `
+            <div class="square ${cat.color}"><i data-lucide="${cat.icon}"></i></div>
             <div style="min-width:0;flex:1">
                 <div class="b s" style="color:var(--blue)">${cat.title}</div>
             </div>
-        </div>
-    `).join('');
-
-    // Event delegation for categories
-    host.addEventListener('click', (e) => {
-        const item = e.target.closest('.item');
-        if (!item) return;
-        
-        state.selectedCategory = item.dataset.id;
-        $$('#category-list .item').forEach(el => 
-            el.classList.toggle('is-active', el === item)
-        );
+        `;
+        item.addEventListener("click", () => {
+            selectedCategory = cat.id;
+            $$("#category-list .item").forEach(el => el.classList.toggle("is-active", el === item));
+        });
+        host.appendChild(item);
     });
+
+    // Refresh icons
+    if (window.lucide) lucide.createIcons();
 }
 
 function renderQuickAmounts() {
@@ -74,247 +71,187 @@ function renderQuickAmounts() {
     const recurringHost = $("#recurring-quick");
     if (!oneTimeHost || !recurringHost) return;
 
-    // One-time amounts
-    oneTimeHost.innerHTML = donationAmounts.map(amount => `
-        <button type="button" class="btn quick-amount" data-amount="${amount}" data-recurring="false">
-            ${money(amount)}
-        </button>
-    `).join('');
+    oneTimeHost.innerHTML = "";
+    recurringHost.innerHTML = "";
 
-    // Recurring amounts
-    recurringHost.innerHTML = [25, 50, 100, 250].map(amount => `
-        <button type="button" class="btn quick-amount" data-amount="${amount}" data-recurring="true">
-            ${money(amount)}/mo
-        </button>
-    `).join('');
+    function createButton(amount, recurring = false) {
+        const btn = document.createElement("button");
+        btn.className = "btn quick-amount";
+        btn.textContent = recurring ? `${money(amount)}/mo` : money(amount);
 
-    // Event delegation for amount buttons
-    [oneTimeHost, recurringHost].forEach(host => {
-        host.addEventListener('click', (e) => {
-            const btn = e.target.closest('.quick-amount');
-            if (!btn) return;
-            
-            const amount = parseInt(btn.dataset.amount);
-            const isRecurringBtn = btn.dataset.recurring === 'true';
-            
-            // Update state
-            state.isRecurring = isRecurringBtn;
-            state.selectedAmount = amount;
-            
-            // Clear custom inputs
-            state.customAmountOneTime = "";
-            state.customAmountMonthly = "";
-            $("#custom-amount").value = "";
-            $("#custom-monthly").value = "";
-            
-            // Update tab state if selecting one-time from recurring
-            if (!isRecurringBtn && state.isRecurring !== isRecurringBtn) {
-                switchTab('one-time');
+        btn.addEventListener("click", () => {
+            isRecurring = recurring;
+            selectedAmount = amount;
+
+            if (recurring) {
+                customAmountMonthly = "";
+                $("#custom-monthly").value = "";
+            } else {
+                customAmountOneTime = "";
+                $("#custom-amount").value = "";
+                $(".tabs-trigger[data-tab='one-time']")?.classList.add("is-active");
+                $(".tabs-trigger[data-tab='recurring']")?.classList.remove("is-active");
+                $("[data-content='one-time']")?.classList.add("is-active");
+                $("[data-content='recurring']")?.classList.remove("is-active");
             }
-            
-            // Update button states - only within the same container
-            host.querySelectorAll('.quick-amount').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // Clear other container's active states
-            const otherHost = host === oneTimeHost ? recurringHost : oneTimeHost;
-            otherHost.querySelectorAll('.quick-amount').forEach(b => b.classList.remove('active'));
-            
+
             refreshDonateButton();
+
+            // Highlight active button
+            const siblingBtns = btn.parentNode.querySelectorAll(".quick-amount");
+            siblingBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
         });
-    });
+
+        return btn;
+    }
+
+    donationAmounts.forEach(a => oneTimeHost.appendChild(createButton(a)));
+    [25, 50, 100, 250].forEach(a => recurringHost.appendChild(createButton(a, true)));
 }
 
 function renderPayments() {
     const host = $("#payment-list");
     if (!host) return;
-    
-    host.innerHTML = paymentMethods.map(pm => `
-        <div class="item${pm.id === state.selectedPaymentMethod ? ' is-active' : ''}" data-id="${pm.id}">
-            <div class="square ${pm.color}">
-                <i data-lucide="${pm.icon}"></i>
-            </div>
+    host.innerHTML = "";
+
+    paymentMethods.forEach(pm => {
+        const item = document.createElement("div");
+        item.className = "item";
+        item.dataset.id = pm.id;
+        if (pm.id === selectedPaymentMethod) item.classList.add("is-active");
+        item.innerHTML = `
+            <div class="square ${pm.color}"><i data-lucide="${pm.icon}"></i></div>
             <div style="min-width:0;flex:1">
                 <div class="b s" style="color:var(--blue)">${pm.name}</div>
             </div>
-        </div>
-    `).join('');
-
-    // Event delegation for payment methods
-    host.addEventListener('click', (e) => {
-        const item = e.target.closest('.item');
-        if (!item) return;
-        showPaymentPanel(item.dataset.id);
+        `;
+        item.addEventListener("click", () => showPaymentPanel(pm.id));
+        host.appendChild(item);
     });
 
-    showPaymentPanel(state.selectedPaymentMethod);
+    showPaymentPanel(selectedPaymentMethod);
+
+    // Refresh icons
+    if (window.lucide) lucide.createIcons();
 }
 
 function showPaymentPanel(id) {
-    state.selectedPaymentMethod = id;
-    
-    // Update active states
-    $$('#payment-list .item').forEach(el => 
-        el.classList.toggle('is-active', el.dataset.id === id)
-    );
-    
-    // Hide all panels and show selected one
-    $$('.pm').forEach(p => p.classList.add('hidden'));
-    const panel = $(`#pm-${id}`);
-    if (panel) panel.classList.remove('hidden');
+    selectedPaymentMethod = id;
+    $$("#payment-list .item").forEach(el => {
+        el.classList.toggle("is-active", el.dataset.id === id);
+    });
+    $$(".pm").forEach(p => p.classList.add("hidden"));
+
+    const map = {
+        card: "#pm-card", paypal: "#pm-paypal", paystack: "#pm-paystack",
+        cashapp: "#pm-cashapp", bitcoin: "#pm-bitcoin", zelle: "#pm-zelle",
+        venmo: "#pm-venmo", bank: "#pm-bank", check: "#pm-check"
+    };
+    const panel = $(map[id]);
+    if (panel) panel.classList.remove("hidden");
 }
 
-function switchTab(tab) {
-    $$('.tabs-trigger').forEach(t => t.classList.remove('is-active'));
-    $(`.tabs-trigger[data-tab="${tab}"]`)?.classList.add('is-active');
-    
-    $$('.tabs-content').forEach(c => c.classList.remove('is-active'));
-    $(`[data-content="${tab}"]`)?.classList.add('is-active');
-    
-    state.isRecurring = tab === 'recurring';
-    clearAmountSelection();
-}
-
-function clearAmountSelection() {
-    state.selectedAmount = null;
-    state.customAmountOneTime = "";
-    state.customAmountMonthly = "";
-    $("#custom-amount").value = "";
-    $("#custom-monthly").value = "";
-    
-    // Clear all active amount buttons
-    $$('.quick-amount').forEach(btn => btn.classList.remove('active'));
-    
-    refreshDonateButton();
-}
-
-/* ===== Donation UI ===== */
+/* ===== Donate Button ===== */
 function refreshDonateButton() {
     const btn = $("#donate-btn");
     const label = $("#donate-btn-text");
-    
-    const amount = state.isRecurring
-        ? (state.selectedAmount ?? (Number(state.customAmountMonthly) || 0))
-        : (state.selectedAmount ?? (Number(state.customAmountOneTime) || 0));
-    
-    const isValid = state.donorName.trim() && 
-                   /\S+@\S+\.\S+/.test(state.donorEmail) && 
-                   amount > 0;
-    
-    if (btn) btn.disabled = !isValid;
-    if (label) {
-        label.textContent = `${state.isRecurring ? "Set Up Monthly" : "Donate"} ${money(amount)}`;
-    }
-    
-    // Update recurring annual display
-    const recurringAnnual = $("#recurring-annual");
-    if (recurringAnnual && state.isRecurring) {
-        const monthlyAmount = (state.selectedAmount ?? Number(state.customAmountMonthly)) || 0;
-        recurringAnnual.textContent = `${money(monthlyAmount * 12)} annually - Your consistent support provides sustainable ministry funding`;
-    }
+    const amount = isRecurring
+        ? ((selectedAmount ?? Number(customAmountMonthly)) || 0)
+        : ((selectedAmount ?? Number(customAmountOneTime)) || 0);
+    const can = donorName.trim() && /\S+@\S+\.\S+/.test(donorEmail) && amount > 0;
+    btn.disabled = !can;
+    label.textContent = `${isRecurring ? "Set Up Monthly" : "Donate"} ${money(amount)}`;
 }
 
-/* ===== Event Handlers ===== */
 function handleDonate(e) {
     e.preventDefault();
-    
-    const amount = state.isRecurring
-        ? (state.selectedAmount ?? (Number(state.customAmountMonthly) || 0))
-        : (state.selectedAmount ?? (Number(state.customAmountOneTime) || 0));
+    const amount = isRecurring
+        ? ((selectedAmount ?? Number(customAmountMonthly)) || 0)
+        : ((selectedAmount ?? Number(customAmountOneTime)) || 0);
 
-    if (state.selectedPaymentMethod === "paystack") {
-        // Paystack integration - replace with your actual key
-        if (typeof PaystackPop !== 'undefined') {
-            const handler = PaystackPop.setup({
-                key: 'pk_test_xxxxxxxxxxxxxxxxxx', // Replace with your key
-                email: state.donorEmail || "donor@example.com",
-                amount: amount * 100, // Convert to kobo
-                currency: "NGN",
-                ref: 'REV_' + Math.floor((Math.random() * 1000000000) + 1),
-                onClose: () => alert('Payment window closed.'),
-                callback: (response) => {
-                    alert('Payment successful! Reference: ' + response.reference);
-                    // Add your success handling logic here
-                }
-            });
-            handler.openIframe();
-        } else {
-            alert('Paystack not loaded. Please try again.');
-        }
+    if (selectedPaymentMethod === "paystack") {
+        const handler = PaystackPop.setup({
+            key: "pk_test_xxxxxxxxxxxxxxxxxx", // replace with your key
+            email: donorEmail || "donor@example.com",
+            amount: amount * 100,
+            currency: "NGN",
+            ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+            callback: function(response) {
+                alert(`Payment successful! Reference: ${response.reference}`);
+            },
+            onClose: function() {
+                alert("Payment window closed.");
+            }
+        });
+        handler.openIframe();
     } else {
-        // Handle other payment methods
-        alert(`Thank you ${state.donorName} for your donation of ${money(amount)} via ${state.selectedPaymentMethod}!`);
+        alert(`Thank you ${donorName} for donating ${money(amount)} via ${selectedPaymentMethod}!`);
     }
 }
 
-function setupInputHandlers() {
-    // Donor info inputs
-    $("#donor-name")?.addEventListener("input", (e) => {
-        state.donorName = e.target.value;
-        refreshDonateButton();
-    });
-    
-    $("#donor-email")?.addEventListener("input", (e) => {
-        state.donorEmail = e.target.value;
-        refreshDonateButton();
-    });
+/* ===== Tabs ===== */
+function setupTabs() {
+    const triggers = $$(".tabs-trigger");
+    triggers.forEach(tr => {
+        tr.addEventListener("click", () => {
+            triggers.forEach(t => t.classList.remove("is-active"));
+            tr.classList.add("is-active");
 
-    // Custom amount inputs
-    $("#custom-amount")?.addEventListener("input", (e) => {
-        state.isRecurring = false;
-        state.selectedAmount = null;
-        state.customAmountOneTime = e.target.value;
-        
-        // Clear all quick amount buttons
-        $$('.quick-amount').forEach(btn => btn.classList.remove('active'));
-        refreshDonateButton();
-    });
+            const contents = $$(".tabs-content");
+            contents.forEach(c => c.classList.remove("is-active"));
+            $(`[data-content="${tr.dataset.tab}"]`)?.classList.add("is-active");
 
-    $("#custom-monthly")?.addEventListener("input", (e) => {
-        state.isRecurring = true;
-        state.selectedAmount = null;
-        state.customAmountMonthly = e.target.value;
-        
-        // Clear all quick amount buttons
-        $$('.quick-amount').forEach(btn => btn.classList.remove('active'));
-        refreshDonateButton();
-    });
-
-    // Memorial toggle
-    $("#memorial-switch")?.addEventListener("change", (e) => {
-        state.isMemorial = e.target.checked;
-        $("#memorial-name-wrap")?.classList.toggle("hidden", !state.isMemorial);
-    });
-
-    $("#memorial-name")?.addEventListener("input", (e) => {
-        state.memorialName = e.target.value;
-    });
-
-    // Tab switching
-    $$('.tabs-trigger').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const tab = trigger.dataset.tab;
-            switchTab(tab);
+            isRecurring = tr.dataset.tab === "recurring";
+            selectedAmount = null;
+            if (isRecurring) { customAmountOneTime = ""; $("#custom-amount").value = ""; }
+            else { customAmountMonthly = ""; $("#custom-monthly").value = ""; }
+            refreshDonateButton();
         });
     });
-
-    // Form submission
-    $("#donate-btn")?.addEventListener("click", handleDonate);
 }
 
-/* ===== Initialize ===== */
-function init() {
+/* ===== Init ===== */
+document.addEventListener("DOMContentLoaded", () => {
     renderCategories();
     renderQuickAmounts();
     renderPayments();
-    setupInputHandlers();
-    refreshDonateButton();
+    setupTabs();
 
-    // Initialize Lucide icons if available
-    if (window.lucide) {
-        lucide.createIcons();
-    }
-}
+    if (window.lucide) lucide.createIcons();
 
-// Initialize when DOM is ready
-document.addEventListener("DOMContentLoaded", init);
+    $("#custom-amount")?.addEventListener("input", e => {
+        isRecurring = false;
+        selectedAmount = null;
+        customAmountOneTime = e.target.value;
+        refreshDonateButton();
+    });
+
+    $("#custom-monthly")?.addEventListener("input", e => {
+        isRecurring = true;
+        selectedAmount = null;
+        customAmountMonthly = e.target.value;
+        refreshDonateButton();
+    });
+
+    $("#memorial-switch")?.addEventListener("change", e => {
+        isMemorial = e.target.checked;
+        $("#memorial-name-wrap")?.classList.toggle("hidden", !isMemorial);
+    });
+
+    $("#memorial-name")?.addEventListener("input", e => {
+        memorialName = e.target.value;
+    });
+
+    $("#donor-name")?.addEventListener("input", e => {
+        donorName = e.target.value;
+        refreshDonateButton();
+    });
+
+    $("#donor-email")?.addEventListener("input", e => {
+        donorEmail = e.target.value;
+        refreshDonateButton();
+    });
+
+    $("#donate-btn")?.addEventListener("click", handleDonate);
+});
