@@ -986,7 +986,8 @@ select:focus {
     gap: 40px;
 }
 
-.footer h3, .footer h4 {
+.footer h3,
+.footer h4 {
     color: #f9d342;
     margin-bottom: 15px;
 }
@@ -1067,47 +1068,47 @@ select:focus {
     .container {
         padding: 0 24px;
     }
-    
+
     .hero h1 {
         font-size: 2.25rem;
     }
-    
+
     .hero p {
         font-size: 1.1rem;
     }
-    
+
     .donate-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .quick-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .payment-methods {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .impact-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .testimonials-grid,
     .stories-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
         text-align: left;
     }
-    
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .section-head h2 {
         font-size: 1.875rem;
     }
@@ -1118,36 +1119,36 @@ select:focus {
     .container {
         padding: 0 20px;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .quick-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .payment-methods {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .two {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .mission-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .donate-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-row {
         flex-direction: column;
         align-items: center;
@@ -1160,45 +1161,45 @@ select:focus {
     .container {
         padding: 0 16px;
     }
-    
+
     .hero {
         padding: 2rem 1rem;
     }
-    
+
     .hero h1 {
         font-size: 1.75rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .mission {
         padding: 1.5rem;
         margin: 1rem auto;
     }
-    
+
     .mission h2 {
         font-size: 1.5rem;
     }
-    
+
     .mission-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .section {
         margin-bottom: 2rem;
     }
-    
+
     .section-head h2 {
         font-size: 1.75rem;
     }
-    
+
     .section-head p {
         font-size: 1rem;
     }
-    
+
     /* Single column layouts */
     .two,
     .quick-grid,
@@ -1206,140 +1207,140 @@ select:focus {
     .donate-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .impact-grid,
     .stories-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
+
     /* Stack tabs vertically if needed */
     .tabs-list {
         grid-template-columns: 1fr;
         gap: 8px;
     }
-    
+
     .tabs-trigger {
         padding: 12px;
         font-size: 0.875rem;
     }
-    
+
     /* Adjust card spacing */
     .card {
         margin: 0.5rem;
         padding: 1rem;
     }
-    
+
     /* Smaller buttons */
     .btn {
         padding: 10px 16px;
         font-size: 0.875rem;
     }
-    
+
     .btn-xl {
         padding: 14px 18px;
         font-size: 1rem;
     }
-    
+
     /* Quick amounts */
     .quick-amount {
         padding: 0.75rem;
         font-size: 0.875rem;
     }
-    
+
     /* Items and squares */
     .item {
         padding: 10px;
         gap: 10px;
     }
-    
+
     .item .square {
         width: 32px;
         height: 32px;
     }
-    
+
     /* Payment methods */
     .payment-method {
         padding: 0.75rem;
         font-size: 0.875rem;
     }
-    
+
     /* Footer */
     .footer {
         padding: 40px 20px 20px;
     }
-    
+
     .footer-container {
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
     }
-    
-    .footer-about, 
-    .footer-links, 
-    .footer-contact, 
+
+    .footer-about,
+    .footer-links,
+    .footer-contact,
     .footer-social {
         text-align: center;
     }
-    
+
     .footer-links ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
-    
+
     .footer-links ul li {
         margin-bottom: 5px;
     }
-    
+
     .social-icons {
         display: flex;
         justify-content: center;
         gap: 20px;
     }
-    
+
     /* Contact improvements */
     .contact-title {
         font-size: 1.75rem;
     }
-    
+
     .contact-sub {
         font-size: 1rem;
     }
-    
+
     .contact-row {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 10px;
     }
-    
+
     /* Final CTA */
     .final-cta {
         padding: 40px 0;
     }
-    
+
     .final-title {
         font-size: 1.5rem;
     }
-    
+
     .final-sub {
         font-size: 1rem;
     }
-    
+
     /* Subheads */
     .subhead {
         font-size: 1.125rem;
     }
-    
+
     /* Copy box improvements */
     .copy-box {
         flex-direction: column;
         gap: 0.5rem;
         text-align: center;
     }
-    
+
     /* KV pairs */
     .kv div {
         flex-direction: column;
@@ -1347,7 +1348,7 @@ select:focus {
         gap: 0.25rem;
         margin: 8px 0;
     }
-    
+
     .kv .muted {
         margin-right: 0;
         font-weight: 600;
@@ -1359,126 +1360,129 @@ select:focus {
     .container {
         padding: 0 12px;
     }
-    
+
     .hero {
         padding: 1.5rem 0.75rem;
     }
-    
+
     .hero h1 {
         font-size: 1.5rem;
     }
-    
+
     .hero p {
         font-size: 0.9rem;
     }
-    
+
     .mission {
         padding: 1rem;
         margin: 0.5rem auto;
     }
-    
+
     .mission h2,
     .section-head h2 {
         font-size: 1.25rem;
     }
-    
+
     .section-head p {
         font-size: 0.9rem;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
         padding: 12px 16px;
         font-size: 0.875rem;
     }
-    
+
     .btn-xl {
         padding: 14px 16px;
         font-size: 0.875rem;
     }
-    
+
     .quick-amount {
         padding: 0.625rem;
         font-size: 0.8rem;
     }
-    
+
     /* Very compact card layout */
     .item {
         padding: 8px;
         gap: 8px;
     }
-    
+
     .item .square {
         width: 28px;
         height: 28px;
     }
-    
+
     /* Smaller input padding */
-    .input, .textarea, select {
+    .input,
+    .textarea,
+    select {
         padding: 10px 12px;
-        font-size: 16px; /* Keep 16px to prevent iOS zoom */
+        font-size: 16px;
+        /* Keep 16px to prevent iOS zoom */
     }
-    
+
     .input-lg {
         padding: 12px 14px;
     }
-    
+
     /* Payment methods */
     .payment-method {
         padding: 0.5rem;
         font-size: 0.8rem;
     }
-    
+
     /* Cards */
     .card {
         margin: 0.25rem;
         padding: 0.75rem;
     }
-    
+
     /* Footer adjustments */
     .footer {
         padding: 30px 15px 15px;
     }
-    
+
     .footer-links ul {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .social-icons a {
         font-size: 18px;
     }
-    
+
     /* Subheads */
     .subhead {
         font-size: 1rem;
     }
-    
+
     /* Contact */
     .contact-title {
         font-size: 1.5rem;
     }
-    
+
     /* Final CTA */
     .final-cta {
         padding: 30px 0;
     }
-    
+
     .final-title {
         font-size: 1.25rem;
     }
-    
+
     .final-sub {
         font-size: 0.9rem;
     }
-    
+
     /* Chip improvements */
     .chip.wide {
         padding: 6px 10px;
         font-size: 0.75rem;
     }
-    
+
     /* Tabs */
     .tabs-trigger {
         padding: 10px;
@@ -1491,29 +1495,29 @@ select:focus {
     .hero {
         padding: 1rem;
     }
-    
+
     .hero h1 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
     }
-    
+
     .hero p {
         margin-bottom: 1rem;
         font-size: 0.9rem;
     }
-    
+
     .mission {
         padding: 1rem;
     }
-    
+
     .section {
         margin-bottom: 1.5rem;
     }
-    
+
     .card {
         padding: 0.75rem;
     }
-    
+
     .footer {
         padding: 20px 15px 10px;
     }
@@ -1521,24 +1525,27 @@ select:focus {
 
 /* ===== Touch and Hover States ===== */
 @media (hover: none) and (pointer: coarse) {
+
     /* Touch device specific styles */
     .btn:hover,
     .item:hover,
     .card:hover,
     .payment-method:hover,
     .quick-amount:hover {
-        transform: none; /* Disable hover transforms on touch */
+        transform: none;
+        /* Disable hover transforms on touch */
         background: initial;
     }
-    
+
     .btn:active,
     .item:active,
     .quick-amount:active {
         transform: scale(0.98);
     }
-    
+
     .card:hover {
-        box-shadow: var(--shadow); /* Keep original shadow */
+        box-shadow: var(--shadow);
+        /* Keep original shadow */
     }
 }
 
@@ -1565,6 +1572,7 @@ select:focus-visible,
 
 /* ===== Print Styles ===== */
 @media print {
+
     .hero,
     .footer,
     .btn,
@@ -1572,22 +1580,49 @@ select:focus-visible,
     .tabs {
         display: none !important;
     }
-    
+
     body {
         font-size: 12pt;
         line-height: 1.4;
         color: #000;
         background: #fff;
     }
-    
+
     .container {
         padding: 0;
         max-width: none;
     }
-    
+
     .card {
         border: 1px solid #ccc;
         box-shadow: none;
         page-break-inside: avoid;
     }
+}
+.pay-panels {
+    margin-top: 1rem;
+}
+
+.pay-panel {
+    display: none;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, .02);
+}
+
+.pay-panel.is-active {
+    display: block;
+}
+
+.btn.tiny {
+    font-size: .8rem;
+    padding: .35rem .6rem;
+    border-radius: .5rem;
+    margin-left: .5rem;
+}
+
+.small.muted {
+    color: #6b7280;
+    font-size: .85rem;
 }
