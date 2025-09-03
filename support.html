@@ -70,21 +70,40 @@
                             <h3 class="subhead">Which Area Do You Want to Support?</h3>
                             <div id="category-list" class="vstack-8">
                                 <div class="item is-active">
-                                    <div class="square primary"><i class="fas fa-heart"></i></div><span>Youth
-                                        Empowerment</span>
+                                    <div class="square primary"><i class="fas fa-heart"></i></div><span>Ministry
+                                        Operations <br> <small style="font-size: x-small;">Daily church operations,
+                                            staff salaries, and utilities</small></span>
+
                                 </div>
                                 <div class="item">
-                                    <div class="square green"><i class="fas fa-users"></i></div><span>Family &
-                                        Well-being</span>
+                                    <div class="square green"><i class="fas fa-users"></i></div><span>Community
+                                        Outreach<br> <small style="font-size: x-small;">Food bank, homeless shelter, and
+                                            community programs</small></span>
                                 </div>
                                 <div class="item">
-                                    <div class="square accent"><i class="fas fa-book"></i></div><span>Education &
-                                        Learning</span>
+                                    <div class="square accent"><i class="fas fa-book"></i></div><span>Youth &
+                                        Education <br> <small style="font-size: x-small;">Sunday school, youth camps,
+                                            and scholarship programs</small></span>
                                 </div>
                                 <div class="item">
+                                    <div class="square slate"><i class="fas fa-home"></i></div>
+                                    <span>Building & Facilities <br> <small style="font-size: x-small;">Church
+                                            maintenance, renovations, and new equipment</small></span>
+                                </div>
+                                <div class="item">
+                                    <div class="square secondary"><i class="fas fa-globe"></i></div>
+                                    <span>Mission Work <br> <small style="font-size: x-small;">Local and international
+                                            evangelical missions</small></span>
+                                </div>
+                                <div class="item">
+                                    <div class="square purple"><i class="fas fa-shield"></i></div>
+                                    <span>Emergency fund <br> <small style="font-size: x-small;">Crisis assistance for
+                                            community members in need</small></span>
+                                </div>
+                                <!-- <div class="item">
                                     <div class="square gold"><i class="fas fa-hand-holding-heart"></i></div>
-                                    <span>Community Outreach</span>
-                                </div>
+                                    <span>Community Outreach <br> <small style="font-size: x-small;">Food bank, homeless shelter, and community programs</small></span>
+                                </div> -->
                             </div>
                         </aside>
 
@@ -162,6 +181,10 @@
                                 <div class="item" data-method="Bank Transfer">
                                     <div class="square slate"><i class="fas fa-university"></i></div><span>Bank
                                         Transfer</span>
+                                </div>
+                                <div class="item" data-method="Paystack">
+                                    <div class="square emerald"><i class="fas fa-wallet"></i></div>
+                                    <span>Paystack</span>
                                 </div>
                             </div>
 
@@ -263,10 +286,37 @@
                                         <input name="bank_ref" class="input" placeholder="Narration or reference">
                                     </div>
                                 </div>
+
+                                <!-- Paystack -->
+                                <div class="pay-panel" data-panel="Paystack">
+                                    <p>Pay securely via Paystack:</p>
+                                    <p>
+                                        Payment Link: <code
+                                            id="paystack-link">https://paystack.com/pay/rev-anthony</code>
+                                        <button type="button" class="btn tiny copy-btn"
+                                            data-copy-target="#paystack-link">
+                                            <i class="far fa-copy"></i> Copy
+                                        </button>
+                                    </p>
+                                    <p>
+                                        Merchant Email: <code id="paystack-email">revpay@example.org</code>
+                                        <button type="button" class="btn tiny copy-btn"
+                                            data-copy-target="#paystack-email">
+                                            <i class="far fa-copy"></i> Copy
+                                        </button>
+                                    </p>
+                                    <div class="field">
+                                        <label class="label-s">Transaction Reference *</label>
+                                        <input name="paystack_ref" class="input"
+                                            placeholder="Paste your Paystack transaction reference">
+                                    </div>
+                                </div>
+
                             </div>
 
                             <!-- Submit -->
-                            <button style="margin: 1rem 0;" id="donate-btn" class="btn btn-primary btn-xl full" type="submit" disabled>
+                            <button id="donate-btn" style="margin: 1rem 0;" class="btn btn-primary btn-xl full"
+                                type="submit" disabled>
                                 <i class="fas fa-heart"></i> <span id="donate-btn-text">Donate $0</span>
                             </button>
 
@@ -369,6 +419,5 @@
     </script> -->
 
 </body>
-
 
 </html>
