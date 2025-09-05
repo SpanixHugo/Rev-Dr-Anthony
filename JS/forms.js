@@ -7,14 +7,22 @@ async function safeFetch(url, options) {
     if (!res.ok) throw new Error("HTTP " + res.status);
     return await res.json();
   } catch (err) {
+    // Detect if it looks like a CORS error
+    if (err instanceof TypeError && err.message === "Failed to fetch") {
+      console.error("❌ CORS/network error:", err);
+      throw new Error("CORS blocked: Please check Google Apps Script headers or deploy settings.");
+    }
+
     // Simulate success on localhost to avoid CORS errors
     if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
-      console.warn("CORS blocked locally, simulating success:", err);
+      console.warn("⚠️ CORS blocked locally, simulating success:", err);
       return { status: "success" };
     }
+
     throw err;
   }
 }
+
 
 function handleFormSubmit(form, formType) {
   if (!form) return;
@@ -123,5 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
   handleDonationInteractions();
   updateDonateButtonText();
 });
+
 
 
