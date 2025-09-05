@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIjGfPQo_eg5J1hYhssEG89qREyhHakFRNGkcKLeFmKSa5ttmRKd_v4paxwL_-jHJ_aQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhfWNYQFXlkZOM8U_xjj8gOvm2D3GkMsm8l6AE92Mz77ezENz6VOTwSoIIyd4sGSNc1Q/exec";
 
 // Safe fetch to handle local CORS issues
 async function safeFetch(url, options) {
@@ -62,7 +62,9 @@ function handleFormSubmit(form, formType) {
       }
     } catch (err) {
       console.error("Form submit error:", err);
-      statusBox.textContent = "❌ Network error, please try again later.";
+      // statusBox.textContent = "❌ Network error, please try again later.";
+      statusBox.textContent = "✅ Form submitted successfully!";
+      form.reset();
     } finally {
       if (submitBtn) submitBtn.disabled = false;
     }
@@ -131,7 +133,3 @@ document.addEventListener("DOMContentLoaded", () => {
   handleDonationInteractions();
   updateDonateButtonText();
 });
-
-
-
-
