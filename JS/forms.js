@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzGUQYkWD6R32aRv8W8sLaAKIG43ZIxJKSxuNuxD2uRDiG4Ct1grinAQS9nhUEtIuhBAA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIjGfPQo_eg5J1hYhssEG89qREyhHakFRNGkcKLeFmKSa5ttmRKd_v4paxwL_-jHJ_aQ/exec";
 
 // Safe fetch to handle local CORS issues
 async function safeFetch(url, options) {
@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   handleDonationInteractions();
   updateDonateButtonText();
 });
+
 
 
 
