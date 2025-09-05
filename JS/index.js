@@ -288,27 +288,4 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Form submission
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Simple form validation
-    const fullname = document.getElementById('fullname').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const program = document.getElementById('program').value;
-    
-    if (!fullname || !email || !phone || !program) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-    
-    // In a real application, you would send this data to a server
-    alert(`Thank you, ${fullname}! Your application for ${program} has been received. We will contact you soon.`);
-    
-    // Reset form and close modal
-    form.reset();
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
 });
