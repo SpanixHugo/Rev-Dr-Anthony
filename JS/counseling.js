@@ -56,43 +56,43 @@ function showToast(msg, ok = true) {
     setTimeout(() => { toast.style.opacity = '0'; }, 3200);
 }
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
+// form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     if (!form.reportValidity()) return;
 
-    status.style.display = 'block';
-    status.textContent = 'Sending request... please wait';
-    status.style.color = 'var(--muted)';
+//     status.style.display = 'block';
+//     status.textContent = 'Sending request... please wait';
+//     status.style.color = 'var(--muted)';
 
-    const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        session: form.session.value,
-        message: form.message.value.trim()
-    };
+//     const data = {
+//         name: form.name.value.trim(),
+//         email: form.email.value.trim(),
+//         phone: form.phone.value.trim(),
+//         session: form.session.value,
+//         message: form.message.value.trim()
+//     };
 
-    try {
-        // Replace '/api/book-session' with your real endpoint (Formspree, Netlify, Google Apps Script, etc.)
-        const res = await fetch('/api/book-session', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
+//     try {
+//         // Replace '/api/book-session' with your real endpoint (Formspree, Netlify, Google Apps Script, etc.)
+//         const res = await fetch('/api/book-session', {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify(data)
+//         });
 
-        if (res.ok) {
-            status.textContent = 'Thanks — your request was received. We will contact you to confirm the date and payment details.';
-            status.style.color = 'var(--accent-2)';
-            showToast('Request sent — thank you!');
-            form.reset();
-        } else {
-            const txt = await res.text().catch(() => null);
-            throw new Error(txt || 'Server error');
-        }
-    } catch (err) {
-        console.error(err);
-        status.textContent = 'There was a problem sending your request. Please email hello@example.com';
-        status.style.color = '#b00020';
-        showToast('Could not send request', false);
-    }
-});
+//         if (res.ok) {
+//             status.textContent = 'Thanks — your request was received. We will contact you to confirm the date and payment details.';
+//             status.style.color = 'var(--accent-2)';
+//             showToast('Request sent — thank you!');
+//             form.reset();
+//         } else {
+//             const txt = await res.text().catch(() => null);
+//             throw new Error(txt || 'Server error');
+//         }
+//     } catch (err) {
+//         console.error(err);
+//         status.textContent = 'There was a problem sending your request. Please email hello@example.com';
+//         status.style.color = '#b00020';
+//         showToast('Could not send request', false);
+//     }
+// });
