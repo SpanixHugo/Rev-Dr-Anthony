@@ -225,9 +225,9 @@ small,
 }
 
 .mission-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* gap: 2rem; */
 }
 
 .mission-text p {
@@ -436,7 +436,7 @@ select:focus {
 }
 
 .donate-grid {
-    grid-template-columns: 1fr 2fr;
+    /* grid-template-columns: 1fr 2fr; */
 }
 
 .gap-12 {

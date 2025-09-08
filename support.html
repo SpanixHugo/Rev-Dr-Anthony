@@ -21,9 +21,9 @@
 
         <!-- Hero -->
         <section class="hero">
-            <h1>Support Our Sacred Mission</h1>
+            <!-- <h1>Support Our Sacred Mission</h1>
             <p>Your generosity sustains our ministry, helps us spread the Gospel, support education, and uplift the less
-                privileged.</p>
+                privileged.</p> -->
             <a href="index.html" class="btn-home"><i class="fas fa-arrow-left"></i> Go Back to Home</a>
         </section>
 
@@ -32,17 +32,17 @@
             <h2>Our Mission</h2>
             <div class="mission-content">
                 <div class="mission-text">
-                    <p>For over 15 years, Rev. Dr. Anthony Ezekwu has dedicated his life to serving communities through
+                    <p>For over the years, Rev. Dr. Anthony Ezekwu has dedicated his life to serving communities through
                         spiritual guidance and education.</p>
                     <p>• Provide free counseling services</p>
-                    <p>• Develop and distribute spiritual resources</p>
+                    <!-- <p>• Develop and distribute spiritual resources</p> -->
                     <p>• Support community outreach programs</p>
-                    <p>• Create educational materials for churches and schools</p>
-                    <p>Every donation matters.</p>
+                    <p>• Create educational materials for church and schools</p>
+                    <!-- <p>Every donation matters.</p> -->
                 </div>
-                <div class="mission-image">
+                <!-- <div class="mission-image">
                     <i class="fas fa-hands-helping" style="font-size:3rem;"></i>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -52,21 +52,22 @@
         <section class="section mission">
             <div class="container">
                 <div class="section-head">
-                    <h2>Make Your Donation</h2>
-                    <p>Choose how you'd like to support Rev Fr Anthony's ministry. Every gift makes a lasting
-                        difference.</p>
+                    <h2>Give your Support</h2>
+                    <p></p>
+                    <!-- <p>Choose how you'd like to support Rev Fr Anthony's ministry. Every gift makes a lasting
+                        difference.</p> -->
                 </div>
 
                 <form id="donationForm" method="post">
                     <!-- Hidden inputs to capture selections -->
-                    <input type="hidden" name="selected_area" id="selected-area" value="Youth Empowerment">
+                    <!-- <input type="hidden" name="selected_area" id="selected-area" value="Youth Empowerment"> -->
                     <input type="hidden" name="selected_amount" id="selected-amount" value="">
                     <input type="hidden" name="selected_payment" id="selected-payment" value="Card">
 
                     <div class="grid donate-grid">
 
                         <!-- Categories -->
-                        <aside>
+                        <!-- <aside>
                             <h3 class="subhead">Which Area Do You Want to Support?</h3>
                             <div id="category-list" class="vstack-8">
                                 <div class="item is-active">
@@ -100,12 +101,9 @@
                                     <span>Emergency fund <br> <small style="font-size: x-small;">Crisis assistance for
                                             community members in need</small></span>
                                 </div>
-                                <!-- <div class="item">
-                                    <div class="square gold"><i class="fas fa-hand-holding-heart"></i></div>
-                                    <span>Community Outreach <br> <small style="font-size: x-small;">Food bank, homeless shelter, and community programs</small></span>
-                                </div> -->
+                                
                             </div>
-                        </aside>
+                        </aside> -->
 
                         <!-- Amount & Details -->
                         <div>
@@ -121,14 +119,14 @@
                                 <!-- One-time -->
                                 <div class="tabs-content is-active" data-content="one-time">
                                     <h3 class="subhead">Select Amount</h3>
-                                    <div class="grid quick-grid">
+                                    <!-- <div class="grid quick-grid">
                                         <div class="quick-amount">$25</div>
                                         <div class="quick-amount">$50</div>
                                         <div class="quick-amount">$100</div>
                                         <div class="quick-amount">$250</div>
                                         <div class="quick-amount">$500</div>
                                         <div class="quick-amount">$1000</div>
-                                    </div>
+                                    </div> -->
                                     <div class="field mt2">
                                         <input id="custom-amount" type="number" placeholder="Enter custom amount"
                                             class="input input-lg" />
@@ -138,12 +136,12 @@
                                 <!-- Recurring -->
                                 <div class="tabs-content" data-content="recurring">
                                     <h3 class="subhead">Monthly Giving Amount</h3>
-                                    <div class="grid quick-grid">
+                                    <!-- <div class="grid quick-grid">
                                         <div class="quick-amount">$25/mo</div>
                                         <div class="quick-amount">$50/mo</div>
                                         <div class="quick-amount">$100/mo</div>
                                         <div class="quick-amount">$250/mo</div>
-                                    </div>
+                                    </div> -->
                                     <div class="field mt2">
                                         <input id="custom-monthly" type="number" placeholder="Custom monthly amount"
                                             class="input input-lg" />
@@ -164,103 +162,14 @@
                             <!-- Payment Methods -->
                             <h3 class="subhead">Choose Payment Method</h3>
                             <div id="payment-list" class="grid two gap-12">
-                                <!-- <div class="item is-active" data-method="Card">
-                                    <div class="square primary"><i class="fas fa-credit-card"></i></div>
-                                    <span>Card</span>
-                                </div> -->
-                                <div class="item" data-method="PayPal">
-                                    <div class="square secondary"><i class="fab fa-paypal"></i></div><span>PayPal</span>
-                                </div>
-                                <div class="item" data-method="Cash App">
-                                    <div class="square green"><i class="fas fa-mobile-alt"></i></div><span>Cash
-                                        App</span>
-                                </div>
-                                <div class="item" data-method="Bitcoin">
-                                    <div class="square orange"><i class="fab fa-bitcoin"></i></div><span>Bitcoin</span>
-                                </div>
-                                <div class="item" data-method="Bank Transfer">
+                                <div class="item is-active" data-method="Bank Transfer">
                                     <div class="square slate"><i class="fas fa-university"></i></div><span>Bank
                                         Transfer</span>
-                                </div>
-                                <div class="item" data-method="Paystack">
-                                    <div class="square emerald"><i class="fas fa-wallet"></i></div>
-                                    <span>Paystack</span>
                                 </div>
                             </div>
 
                             <!-- Payment Panels -->
                             <div class="pay-panels">
-                                <!-- Card -->
-                                <!-- <div class="pay-panel is-active" data-panel="Card">
-                                    <div class="grid two">
-                                        <div class="field">
-                                            <label class="label-s">Name on Card *</label>
-                                            <input name="card_name" class="input" data-req="panel">
-                                        </div>
-                                        <div class="field">
-                                            <label class="label-s">Card Number *</label>
-                                            <input name="card_number" class="input" inputmode="numeric" maxlength="19"
-                                                placeholder="1234 5678 9012 3456" data-req="panel">
-                                        </div>
-                                    </div>
-                                    <div class="grid two">
-                                        <div class="field">
-                                            <label class="label-s">Expiry (MM/YY) *</label>
-                                            <input name="card_expiry" class="input" placeholder="MM/YY"
-                                                data-req="panel">
-                                        </div>
-                                        <div class="field">
-                                            <label class="label-s">CVV *</label>
-                                            <input name="card_cvv" class="input" inputmode="numeric" maxlength="4"
-                                                placeholder="***" data-req="panel">
-                                        </div>
-                                    </div>
-                                    <p class="small muted">Demo only — integrate a gateway (Paystack/Stripe) for real
-                                        card processing.</p>
-                                </div> -->
-
-                                <!-- PayPal -->
-                                <div class="pay-panel" data-panel="PayPal">
-                                    <p>Send to PayPal: <code id="pp-email">rev@example.org</code>
-                                        <button type="button" class="btn tiny copy-btn" data-copy-target="#pp-email"><i
-                                                class="far fa-copy"></i> Copy</button>
-                                    </p>
-                                    <p>Or use: <code id="pp-link">https://paypal.me/rev</code>
-                                        <button type="button" class="btn tiny copy-btn" data-copy-target="#pp-link"><i
-                                                class="far fa-copy"></i> Copy</button>
-                                    </p>
-                                    <div class="field">
-                                        <label class="label-s">Transaction Ref / Email used</label>
-                                        <input name="paypal_ref" class="input"
-                                            placeholder="PayPal transaction ID or email">
-                                    </div>
-                                </div>
-
-                                <!-- Cash App -->
-                                <div class="pay-panel" data-panel="Cash App">
-                                    <p>Cash Tag: <code id="cash-tag">$RevAnthony</code>
-                                        <button type="button" class="btn tiny copy-btn" data-copy-target="#cash-tag"><i
-                                                class="far fa-copy"></i> Copy</button>
-                                    </p>
-                                    <div class="field">
-                                        <label class="label-s">Transaction Reference</label>
-                                        <input name="cashapp_ref" class="input" placeholder="Enter Cash App reference">
-                                    </div>
-                                </div>
-
-                                <!-- Bitcoin -->
-                                <div class="pay-panel" data-panel="Bitcoin">
-                                    <p>BTC Address: <code id="btc-addr">bc1qexampleaddress1234567890xyz</code>
-                                        <button type="button" class="btn tiny copy-btn" data-copy-target="#btc-addr"><i
-                                                class="far fa-copy"></i> Copy</button>
-                                    </p>
-                                    <div class="field">
-                                        <label class="label-s">TXID (Proof of Payment)</label>
-                                        <input name="btc_txid" class="input"
-                                            placeholder="Paste your Bitcoin transaction ID">
-                                    </div>
-                                </div>
-
                                 <!-- Bank Transfer -->
                                 <div class="pay-panel" data-panel="Bank Transfer">
                                     <div class="grid two">
@@ -286,44 +195,18 @@
                                         <input name="bank_ref" class="input" placeholder="Narration or reference">
                                     </div>
                                 </div>
-
-                                <!-- Paystack -->
-                                <div class="pay-panel" data-panel="Paystack">
-                                    <p>Pay securely via Paystack:</p>
-                                    <p>
-                                        Payment Link: <code
-                                            id="paystack-link">https://paystack.com/pay/rev-anthony</code>
-                                        <button type="button" class="btn tiny copy-btn"
-                                            data-copy-target="#paystack-link">
-                                            <i class="far fa-copy"></i> Copy
-                                        </button>
-                                    </p>
-                                    <p>
-                                        Merchant Email: <code id="paystack-email">revpay@example.org</code>
-                                        <button type="button" class="btn tiny copy-btn"
-                                            data-copy-target="#paystack-email">
-                                            <i class="far fa-copy"></i> Copy
-                                        </button>
-                                    </p>
-                                    <div class="field">
-                                        <label class="label-s">Transaction Reference *</label>
-                                        <input name="paystack_ref" class="input"
-                                            placeholder="Paste your Paystack transaction reference">
-                                    </div>
-                                </div>
-
                             </div>
 
                             <!-- Submit -->
                             <button id="donate-btn" style="margin: 1rem 0;" class="btn btn-primary btn-xl full"
                                 type="submit" disabled>
-                                <i class="fas fa-heart"></i> <span id="donate-btn-text">Donate $0</span>
+                                <i class="fas fa-heart"></i> <span id="donate-btn-text">Support $0</span>
                             </button>
 
-                            <div class="secure small center">
+                            <!-- <div class="secure small center">
                                 <i class="fas fa-shield-alt icon-12"></i> 256-bit SSL encryption • Tax-deductible
                                 receipt
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </form>

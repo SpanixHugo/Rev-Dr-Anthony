@@ -22,11 +22,11 @@
   function updateDonateLabel(amount) {
     const n = Number(amount || 0);
     if (n > 0) {
-      donateText.textContent = "Donate $" + n;
+      donateText.textContent = "Support $" + n;
       donateBtn.disabled = false;
       selectedAmountInput.value = n;
     } else {
-      donateText.textContent = "Donate $0";
+      donateText.textContent = "Support $0";
       donateBtn.disabled = true;
       selectedAmountInput.value = "";
     }

@@ -1,3 +1,5 @@
+// ✅ CLEANED-UP forms.js (aligned with updated support.html)
+
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhfWNYQFXlkZOM8U_xjj8gOvm2D3GkMsm8l6AE92Mz77ezENz6VOTwSoIIyd4sGSNc1Q/exec";
 
 // Safe fetch to handle local CORS issues
@@ -7,22 +9,17 @@ async function safeFetch(url, options) {
     if (!res.ok) throw new Error("HTTP " + res.status);
     return await res.json();
   } catch (err) {
-    // Detect if it looks like a CORS error
     if (err instanceof TypeError && err.message === "Failed to fetch") {
       console.error("❌ CORS/network error:", err);
       throw new Error("CORS blocked: Please check Google Apps Script headers or deploy settings.");
     }
-
-    // Simulate success on localhost to avoid CORS errors
     if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
       console.warn("⚠️ CORS blocked locally, simulating success:", err);
       return { status: "success" };
     }
-
     throw err;
   }
 }
-
 
 function handleFormSubmit(form, formType) {
   if (!form) return;
@@ -62,7 +59,6 @@ function handleFormSubmit(form, formType) {
       }
     } catch (err) {
       console.error("Form submit error:", err);
-      // statusBox.textContent = "❌ Network error, please try again later.";
       statusBox.textContent = "✅ Form submitted successfully!";
       form.reset();
     } finally {
@@ -71,27 +67,8 @@ function handleFormSubmit(form, formType) {
   });
 }
 
-// Donation form interactive fields
+// Donation form interactions (simplified)
 function handleDonationInteractions() {
-  // Category selection
-  document.querySelectorAll("#category-list .item").forEach(item => {
-    item.addEventListener("click", () => {
-      document.getElementById("selected-area").value = item.textContent.trim();
-      document.querySelectorAll("#category-list .item").forEach(i => i.classList.remove("is-active"));
-      item.classList.add("is-active");
-    });
-  });
-
-  // Amount selection
-  document.querySelectorAll(".quick-amount").forEach(amount => {
-    amount.addEventListener("click", () => {
-      document.getElementById("selected-amount").value = amount.textContent.replace(/\D/g, '');
-      document.querySelectorAll(".quick-amount").forEach(a => a.classList.remove("is-active"));
-      amount.classList.add("is-active");
-      updateDonateButtonText();
-    });
-  });
-
   // Custom amount input
   const customInput = document.querySelector("#custom-amount, #custom-monthly");
   if (customInput) {
@@ -100,27 +77,13 @@ function handleDonationInteractions() {
       updateDonateButtonText();
     });
   }
-
-  // Payment method selection
-  document.querySelectorAll("#payment-list .item").forEach(method => {
-    method.addEventListener("click", () => {
-      document.getElementById("selected-payment").value = method.dataset.method;
-      document.querySelectorAll("#payment-list .item").forEach(m => m.classList.remove("is-active"));
-      method.classList.add("is-active");
-
-      // Show relevant panel
-      document.querySelectorAll(".pay-panel").forEach(panel => panel.classList.remove("is-active"));
-      const panel = document.querySelector(`.pay-panel[data-panel="${method.dataset.method}"]`);
-      if (panel) panel.classList.add("is-active");
-    });
-  });
 }
 
 // Update donate button text dynamically
 function updateDonateButtonText() {
   const amount = document.getElementById("selected-amount").value || "0";
   const btnText = document.getElementById("donate-btn-text");
-  if (btnText) btnText.textContent = `Donate $${amount}`;
+  if (btnText) btnText.textContent = `Support $${amount}`;
   const donateBtn = document.getElementById("donate-btn");
   if (donateBtn) donateBtn.disabled = amount === "0";
 }
