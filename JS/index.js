@@ -182,59 +182,105 @@ function openTab(tabName) {
     event.currentTarget.classList.add('active-link');
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("images.json")
-    .then(res => res.json())
-    .then(data => {
-      const images = data.images;
-      const mainGallery = document.getElementById("gallery-grid");
-      const modalGallery = document.getElementById("gallery-modal-grid");
+// Gallery Album Functionality
+let albumsData = [];
 
-      // First 8 images → main gallery
-      images.slice(0, 8).forEach(src => {
-        const div = document.createElement("div");
-        div.className = "gallery-item";
-        div.innerHTML = `<img src="${src}" alt="Gallery Image">`;
-        mainGallery.appendChild(div);
-      });
+fetch('images.json')
+  .then(res => res.json())
+  .then(data => {
+    albumsData = data.albums;
+    renderAlbums();
+})
+.catch(err => console.error('Error loading gallery.json', err));
 
-      // Remaining images → modal gallery
-      images.slice(8).forEach(src => {
-        const div = document.createElement("div");
-        div.className = "gallery-item";
-        div.innerHTML = `<img src="${src}" alt="Gallery Image">`;
-        modalGallery.appendChild(div);
-      });
+function renderAlbums() {
+  const list = document.getElementById('albumList');
+  list.innerHTML = '';
 
-      // Enable click-to-enlarge inside modal
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const lightboxClose = document.querySelector(".lightbox-close");
+  albumsData.forEach(album => {
+    const div = document.createElement('div');
+    div.className = 'album';
+    div.innerHTML = `
+      <img src="${album.cover}" alt="${album.title}">
+      <h3>${album.title}</h3>
+      <p>${album.info}</p>
+    `;
+    div.addEventListener('click', () => openAlbum(album.id));
+    list.appendChild(div);
+  });
+}   
 
-      modalGallery.addEventListener("click", e => {
-        if (e.target.tagName === "IMG") {
-          lightbox.style.display = "flex";
-          lightboxImg.src = e.target.src;
-        }
-      });
+function openAlbum(id) {
+  const album = albumsData.find(a => a.id === id);
+  if (!album) return;
 
-      lightboxClose.onclick = () => (lightbox.style.display = "none");
-      lightbox.onclick = e => {
-        if (e.target === lightbox) lightbox.style.display = "none";
-      };
-    });
+  currentAlbum = album; // <-- remember which album is open
 
-  // Modal handling
-  const modal = document.getElementById("galleryModal");
-  const btn = document.getElementById("openGalleryModal");
-  const span = document.querySelector(".close");
+  document.getElementById('albumList').classList.add('hidden');
+  const photosDiv = document.getElementById('albumPhotos');
+  const grid = document.getElementById('photoGrid');
+  const title = document.getElementById('albumTitle');
+  const info = document.getElementById('albumInfo');
 
-  btn.onclick = () => (modal.style.display = "block");
-  span.onclick = () => (modal.style.display = "none");
-  window.onclick = e => {
-    if (e.target == modal) modal.style.display = "none";
-  };
+  grid.innerHTML = '';
+  title.textContent = album.title;
+
+  album.photos.forEach((src, index) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.addEventListener('click', () => openLightbox(index));
+    grid.appendChild(img);
+  });
+
+  photosDiv.classList.add('active');
+  photosDiv.classList.remove('hidden');
+}
+
+
+function showAlbums() {
+  document.getElementById('albumList').classList.remove('hidden');
+  document.getElementById('albumPhotos').classList.remove('active');
+  document.getElementById('albumPhotos').classList.add('hidden');
+}
+
+// --- Lightbox Variables ---
+let currentAlbum = null;
+let currentIndex = 0;
+
+// --- Show Lightbox ---
+function openLightbox(index) {
+  currentIndex = index;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImage');
+
+  lightboxImg.src = currentAlbum.photos[currentIndex];
+  lightbox.classList.add('active');
+}
+
+// --- Close Lightbox ---
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// --- Navigate ---
+function prevImage() {
+  currentIndex = (currentIndex - 1 + currentAlbum.photos.length) % currentAlbum.photos.length;
+  document.getElementById('lightboxImage').src = currentAlbum.photos[currentIndex];
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % currentAlbum.photos.length;
+  document.getElementById('lightboxImage').src = currentAlbum.photos[currentIndex];
+}
+
+// Close lightbox when clicking outside the image
+document.getElementById('lightbox').addEventListener('click', function (e) {
+  // If user clicks directly on the backdrop (not the image or buttons)
+  if (e.target === this) {
+    closeLightbox();
+  }
 });
+
 
 // const modal = document.getElementById("applicationModal");
 // const openBtn = document.getElementById("openApplicationForm");

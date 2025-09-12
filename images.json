@@ -54,6 +54,76 @@
     "images/IMG-20250828-WA0056.jpg"
   ],
 
+    "albums": [
+        {
+        "id": "me",
+        "title": "My Photos",
+        "info": "A collection of personal moments, achievements, and milestones that reflect his journey, passion, and dedication to his calling.",
+        "cover": "images/me/IMG-20250618-WA0246.jpg",
+        "photos": [
+            "images/me/IMG-20250618-WA0240.jpg",
+            "images/me/IMG-20250618-WA0241.jpg",
+            "images/me/IMG-20250618-WA0242.jpg",
+            "images/me/IMG-20250618-WA0243.jpg",
+            "images/me/IMG-20250618-WA0244.jpg",
+            "images/me/IMG-20250618-WA0245.jpg",
+            "images/me/IMG-20250618-WA0246.jpg",
+            "images/me/IMG-20250618-WA0247.jpg",
+            "images/me/IMG-20250824-WA0336.jpg",
+            "images/me/IMG-20250828-WA0047.jpg",
+            "images/me/IMG-20250828-WA0049.jpg"
+        ]
+        },
+        {
+        "id": "schools",
+        "title": "Helping in Schools",
+        "info": "Supporting local schools with materials and mentorship to improve education.",
+        "cover": "images/schools/IMG-20250828-WA0041.jpg",
+        "photos": [
+            "images/schools/IMG-20250825-WA0008.jpg", 
+            "images/schools/IMG-20250825-WA0010.jpg", 
+            "images/schools/WhatsApp Image 2025-08-24 at 15.56.47_74c2fe08.jpg", 
+            "images/schools/IMG-20250828-WA0053.jpg", 
+            "images/schools/IMG-20250828-WA0043.jpg", 
+            "images/schools/IMG-20250828-WA0044.jpg", 
+            "images/schools/IMG-20250828-WA0046.jpg", 
+            "images/schools/IMG-20250828-WA0037.jpg", 
+            "images/schools/IMG-20250828-WA0041.jpg", 
+            "images/schools/IMG-20250828-WA0032.jpg", 
+            "images/schools/IMG-20250828-WA0033.jpg", 
+            "images/schools/IMG-20250828-WA0028.jpg", 
+            "images/schools/IMG-20250828-WA0030.jpg", 
+            "images/schools/IMG-20250828-WA0026.jpg", 
+            "images/schools/IMG-20250828-WA0020.jpg"
+        ]
+        },
+        {
+        "id": "lessPrivileged",
+        "title": "Helping the Less Privileged",
+        "info": "Providing care, food, clothing, and hope to the less privileged, showing compassion through practical acts of love and service.",
+        "cover": "images/lessPrivileged/IMG-20250828-WA0039.jpg",
+        "photos": [
+            "images/lessPrivileged/WhatsApp Image 2025-08-25 at 08.34.49_1a478abf.jpg",
+            "images/lessPrivileged/IMG-20250828-WA0052.jpg",
+            "images/lessPrivileged/IMG-20250825-WA0007.jpg",
+            "images/lessPrivileged/IMG-20250828-WA0039.jpg"
+        ]
+        },
+        {
+        "id": "community",
+        "title": "Community Events",
+        "info": "Bringing people together through uplifting community gatherings, outreach missions, and church programs that strengthen faith and unity.",
+        "cover": "images/community/IMG-20250828-WA0051.jpg",
+        "photos": [
+            "images/community/IMG-20250828-WA0021.jpg",
+            "images/community/IMG-20250828-WA0025.jpg",
+            "images/community/IMG-20250828-WA0034.jpg",
+            "images/community/IMG-20250828-WA0051.jpg"
+        ]
+        }
+    ],
+
+
   "books": [
     { 
       "title": "Stories From the Dream Land", 

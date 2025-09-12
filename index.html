@@ -36,7 +36,7 @@
   <meta name="twitter:creator" content="@AnthonyEzekwu">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://yourdomain.com/">
+  <link rel="canonical" href="https://spanixhugo.github.io/Rev-Dr-Anthony/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -52,8 +52,8 @@
     "name": "Rev. Dr. Anthony Okechukwu Ezekwu",
     "jobTitle": "Catholic Priest, Scholar, Author",
     "description": "Catholic priest, scholar, author, and counselor offering spiritual guidance, youth mentorship, and ministry programs",
-    "url": "https://yourdomain.com",
-    "image": "https://yourdomain.com/images/rev-anthony-ezekwu-catholic-priest.jpg",
+    "url": "https://spanixhugo.github.io/Rev-Dr-Anthony/",
+    "image": "https://anthonyezekwu.com/images/rev-anthony-ezekwu-catholic-priest.jpg",
     "email": "toniezekwu@gmail.com",
     "telephone": "+4915216781286",
     "address": {
@@ -93,8 +93,8 @@
     "@context": "https://schema.org",
     "@type": "ReligiousOrganization",
     "name": "Rev. Dr. Anthony Okechukwu Ezekwu Ministry",
-    "url": "https://yourdomain.com",
-    "logo": "https://yourdomain.com/images/logo.png",
+    "url": "https://spanixhugo.github.io/Rev-Dr-Anthony/",
+    "logo": "https://anthonyezekwu.com/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+4915216781286",
@@ -432,31 +432,47 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">
+   <section id="gallery" class="gallery-section">
         <div class="container">
-            <h2 class="section-title">Photo Gallery</h2>
-            <div id="gallery-grid" class="gallery-grid"></div>
-
-            <div class="see-more-container">
-                <button id="openGalleryModal" class="btn">See Full Gallery</button>
+            <h2 class="section-title">Gallery</h2>
+    
+            <!-- ===== Album View ===== -->
+            <div id="albumList" class="album-list">
+                <!-- Album 1 -->
+                <div class="album" onclick="openAlbum('schools')">
+                    <img src="./images/schools/IMG-20250828-WA0041.jpg" alt="Helping in Schools">
+                    <h3>Helping in Schools</h3>
+                </div>
+    
+                <!-- Album 2 -->
+                <div class="album" onclick="openAlbum('lessPrivileged')">
+                    <img src="images/lessPrivileged/cover.jpg" alt="Helping the Less Privileged">
+                    <h3>Helping the Less Privileged</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quod id numquam distinctio nesciunt totam unde, magnam asperiores veniam natus.</p>
+                </div>
+    
+                <!-- Album 3 -->
+                <div class="album" onclick="openAlbum('community')">
+                    <img src="images/community/cover.jpg" alt="Community Events">
+                    <h3>Community Events</h3>
+                </div>
+            </div>
+    
+            <!-- ===== Photos View ===== -->
+            <div id="albumPhotos" class="album-photos hidden">
+                <button class="back-btn" onclick="showAlbums()">← Back to Albums</button>
+                <h3 id="albumTitle"></h3>
+                <div id="photoGrid" class="photo-grid"></div>
+            </div>
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox hidden">
+                <span class="close-btn" onclick="closeLightbox()">❌</span>
+                <button class="prev-btn" onclick="prevImage()">&#10094;</button>
+                <img id="lightboxImage" src="" alt="">
+                <button class="next-btn" onclick="nextImage()">&#10095;</button>
             </div>
         </div>
     </section>
-
-    <!-- Modal for full gallery -->
-    <div id="galleryModal" class="modal" role="dialog" aria-labelledby="gallery-modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <span class="close" aria-label="Close gallery modal">&times;</span>
-            <h2 id="gallery-modal-title">Full Photo Gallery</h2>
-            <div id="gallery-modal-grid" class="gallery-grid"></div>
-        </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
-        <span class="lightbox-close" aria-label="Close lightbox">&times;</span>
-        <img class="lightbox-img" id="lightbox-img" src="" alt="Preview">
-    </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
