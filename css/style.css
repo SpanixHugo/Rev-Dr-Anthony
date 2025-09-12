@@ -1312,7 +1312,7 @@ blockquote {
 }
 .lightbox img {
   max-width: 80%;
-  /* height: 80%; */
+  height: 80%;
   border-radius: 8px;
   object-fit: contain;
 }
@@ -1398,4 +1398,5 @@ blockquote {
     background: linear-gradient(135deg, var(--accent-2), var(--accent));
     color: #fff;
     font-weight: 700;
+
 }
