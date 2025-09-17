@@ -99,6 +99,17 @@ img {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #7d3c98;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .btn-outline {
     background-color: transparent;
     border: 2px solid var(--accent);
@@ -762,29 +773,47 @@ header {
 }
 
 .album {
-  display: flex;
-  flex-direction: column;
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s;
-  background: #fafafa;
+  display: flex;
+  flex-direction: column; /* Allow content to stack */
 }
 .album:hover {
   transform: translateY(-5px);
 }
 .album img {
   width: 100%;
-  height: 400px;
+  height: 200px;            /* Reduce height on all screens */
   object-fit: cover;
 }
+
 .album h3 {
-  margin: 10px 0;
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
 }
 
-.album-photos { display: none; }
-.album-photos.active { display: block; }
+.album p {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 0 10px 10px;
+  text-align: left;
+  line-height: 1.4;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 3;       optional: limit lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.album-photos { 
+    display: none; 
+}
+.album-photos.active { 
+    display: block; 
+}
 
 .photo-grid {
   display: grid;
@@ -1350,11 +1379,11 @@ blockquote {
 
     .album p {
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        /* -webkit-line-clamp: 2; */
         /* show only 2 lines */
         line-clamp: 2;
         /* standard property for compatibility */
-        -webkit-box-orient: vertical;
+        /* -webkit-box-orient: vertical; */
         overflow: hidden;
     }
     .photo-grid {
@@ -1374,6 +1403,7 @@ blockquote {
     background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     border-radius: 12px;
     border-left: 5px solid #2ecc71;
+    /* border-left: 5px solid var(--secondary); */
 }
 
 .counseling-container h3 {
@@ -1398,5 +1428,4 @@ blockquote {
     background: linear-gradient(135deg, var(--accent-2), var(--accent));
     color: #fff;
     font-weight: 700;
-
 }

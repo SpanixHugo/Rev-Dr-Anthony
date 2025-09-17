@@ -61,17 +61,18 @@
         "info": "A collection of personal moments, achievements, and milestones that reflect his journey, passion, and dedication to his calling.",
         "cover": "images/me/IMG-20250618-WA0246.jpg",
         "photos": [
+            "images/me/IMG-20250824-WA0336.jpg",
+            "images/me/IMG-20250618-WA0246.jpg",
             "images/me/IMG-20250618-WA0240.jpg",
             "images/me/IMG-20250618-WA0241.jpg",
-            "images/me/IMG-20250618-WA0242.jpg",
             "images/me/IMG-20250618-WA0243.jpg",
-            "images/me/IMG-20250618-WA0244.jpg",
             "images/me/IMG-20250618-WA0245.jpg",
-            "images/me/IMG-20250618-WA0246.jpg",
             "images/me/IMG-20250618-WA0247.jpg",
-            "images/me/IMG-20250824-WA0336.jpg",
             "images/me/IMG-20250828-WA0047.jpg",
-            "images/me/IMG-20250828-WA0049.jpg"
+            "images/me/IMG-20250828-WA0022.jpg",
+            "images/me/IMG-20250828-WA0049.jpg",
+            "images/me/IMG-20250828-WA0023.jpg",
+            "images/me/IMG-20250828-WA0040.jpg"
         ]
         },
         {
@@ -101,24 +102,44 @@
         "id": "lessPrivileged",
         "title": "Helping the Less Privileged",
         "info": "Providing care, food, clothing, and hope to the less privileged, showing compassion through practical acts of love and service.",
-        "cover": "images/lessPrivileged/IMG-20250828-WA0039.jpg",
+        "cover": "images/lessPrivileged/WhatsApp Image 2025-08-25 at 08.34.49_1a478abf.jpg",
         "photos": [
             "images/lessPrivileged/WhatsApp Image 2025-08-25 at 08.34.49_1a478abf.jpg",
             "images/lessPrivileged/IMG-20250828-WA0052.jpg",
             "images/lessPrivileged/IMG-20250825-WA0007.jpg",
-            "images/lessPrivileged/IMG-20250828-WA0039.jpg"
+            "images/lessPrivileged/IMG-20250828-WA0039.jpg",
+            "images/lessPrivileged/IMG-20250825-WA0007.jpg"
+        ]
+        },
+        {
+        "id": "waterproject",
+        "title": "Community Water Project",
+        "info": "Providing care, food, clothing, and hope to the less privileged, showing compassion through practical acts of love and service.",
+        "cover": "images/waterProject/IMG-20250828-WA0034.jpg",
+        "photos": [
+            "images/waterProject/IMG-20250828-WA0025.jpg",
+            "images/waterProject/IMG-20250828-WA0034.jpg",
+            "images/waterProject/IMG-20250828-WA0035.jpg",
+            "images/waterProject/IMG-20250828-WA0031.jpg"
         ]
         },
         {
         "id": "community",
         "title": "Community Events",
-        "info": "Bringing people together through uplifting community gatherings, outreach missions, and church programs that strengthen faith and unity.",
+        "info": "Bringing people together through projects that uplifts the community and individuals, most importyantly, uplifts the quality of life in the communities.",
         "cover": "images/community/IMG-20250828-WA0051.jpg",
         "photos": [
             "images/community/IMG-20250828-WA0021.jpg",
-            "images/community/IMG-20250828-WA0025.jpg",
-            "images/community/IMG-20250828-WA0034.jpg",
-            "images/community/IMG-20250828-WA0051.jpg"
+            "images/community/IMG-20250828-WA0051.jpg",
+            "images/community/IMG-20250828-WA0056.jpg",
+            "images/community/IMG-20250825-WA0009.jpg",
+            "images/community/IMG-20250828-WA0024.jpg",
+            "images/community/IMG-20250828-WA0054.jpg",
+            "images/community/IMG-20250828-WA0048.jpg",
+            "images/community/WhatsApp Image 2025-09-16 at 14.34.43_cc9adf84.jpg",
+            "images/community/IMG-20250828-WA0027.jpg",
+            "images/community/IMG-20250828-WA0036.jpg", 
+            "images/community/IMG-20250828-WA0038.jpg"
         ]
         }
     ],
