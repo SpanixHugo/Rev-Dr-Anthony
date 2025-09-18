@@ -20,10 +20,10 @@
     --panel: #ffffff;
     --text: #2c3e50;           /* deep navy-ish text */
     --muted: #6c7a89;          /* cool grey */
-/*     --accent: #8e44ad;          */
-/*     --accent-2: #7d3c98;        */
+    /*     --accent: #8e44ad;          */
+    /*     --accent-2: #7d3c98;        */
     --accent: #2e86de;         /* vivid medium blue */
-    --accent-2: #54a0ff; 
+    --accent-2: #54a0ff;       /* lighter sky blue */
     --radius: 12px;
     --container: 1100px;
     --shadow-1: 0 12px 36px rgba(0, 0, 0, 0.05);
@@ -619,4 +619,3 @@ footer {
 .icon {
     animation: float 3s ease-in-out infinite;
 }
-
