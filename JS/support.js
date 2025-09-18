@@ -155,4 +155,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // Select all bank items
+  const bankItems = document.querySelectorAll('.bank-item');
+
+ bankItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const bankId = item.getAttribute('data-bank');
+        const detail = document.getElementById(bankId);
+        // Toggle the clicked bank's details
+        if (detail.style.display === 'block') {
+            detail.style.display = 'none';
+        } else {
+            // Hide all other bank details
+            document.querySelectorAll('.bank-details').forEach(d => d.style.display = 'none');
+            detail.style.display = 'block';
+        }
+    });
+});
+
+
 }); // end DOMContentLoaded

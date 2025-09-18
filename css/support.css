@@ -1626,3 +1626,76 @@ select:focus-visible,
     color: #6b7280;
     font-size: .85rem;
 }
+
+* Container styling */
+.pay-panel {
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+/* Bank list styling */
+.bank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bank-item {
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.bank-item:hover {
+    background: #e0f0ff;
+    border-color: #007bff;
+}
+
+/* Bank details styling */
+.bank-details {
+    margin-top: 10px;
+    padding: 15px;
+    background: #e9f7ff;
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
+    display: none;
+    animation: fadeSlide 0.3s ease forwards;
+}
+
+.bank-details div {
+    margin-bottom: 8px;
+}
+
+/* Copy button styling */
+.copy-btn {
+    margin-left: 8px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+/* Simple fade+slide animation */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Teller input */
+.field {
+    margin-top: 20px;
+}
+.input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
