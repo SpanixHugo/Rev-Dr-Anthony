@@ -1,6 +1,6 @@
 // ✅ ENHANCED forms.js — now includes supportType + otherSupport fields
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOTOpSd00F2AE77UoYg7ZRe4wZXZ62lyUGckVlib2FXd1UY4y021rfzp0et_0hmm7ilQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3qNBZR6P8ezy7rk-_rsuZ9JPY93ToIDAtEDWgScT6N66_1fnFW2wxQzmoNcpemIkN/exec";
 
 // Safe fetch to handle local CORS issues
 async function safeFetch(url, options) {
