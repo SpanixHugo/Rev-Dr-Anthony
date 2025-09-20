@@ -1,6 +1,6 @@
 // ✅ ENHANCED forms.js — now includes supportType + otherSupport fields
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxt1LMEusqsiyidg-c4aqf5djDk8avLNInYl3Uz9Cp-cC6Sir9f9HAnu775bDVl-8A8YA/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4QdZPNy7Tp0YHTJCm6f61Fq8cSk8A8RsRdfIJfXzMaWMbW6KWuixcX3u_QSiTINwH/exec";
 
 // Safe fetch to handle local CORS issues
 async function safeFetch(url, options) {
@@ -105,3 +105,4 @@ document.addEventListener("DOMContentLoaded", () => {
   handleDonationInteractions();
   updateDonateButtonText();
 });
+
