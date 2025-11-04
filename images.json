@@ -101,7 +101,7 @@
         {
         "id": "lessPrivileged",
         "title": "Helping the Less Privileged",
-        "info": "Providing care, food, clothing, and hope to the less privileged, showing compassion through practical acts of love and service.",
+        "info": "Providing care, shelter, food, clothing, and hope to the less privileged, showing compassion through practical acts of love and service.",
         "cover": "images/lessPrivileged/WhatsApp Image 2025-08-25 at 08.34.49_1a478abf.jpg",
         "photos": [
             "images/lessPrivileged/WhatsApp Image 2025-08-25 at 08.34.49_1a478abf.jpg",
@@ -275,4 +275,5 @@
     }
   ]
 }
+
 
